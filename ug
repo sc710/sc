@@ -1,0 +1,479 @@
+game.workspace:FindFirstChild("gator", true).Parent.Parent.Name = "AB2"
+game.workspace:FindFirstChild("Fridge", true).Parent.Parent.Parent.Name = "AB3"
+game.workspace:FindFirstChild("FrontRightWheel", true).Parent.Parent.Name = "AB4"
+
+-------------------------------------------------------
+
+local Material = loadstring(game:HttpGet("https://pastebin.com/raw/Uf3cpFfW"))()
+
+wait(7.7)
+
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+-------------------------------------------------------
+
+local X = Material.Load({
+	Title = "Nanachi Hub",
+	Style = 2,
+	SizeX = 470,
+	SizeY = 230,
+	Theme = "Mocha",
+	ColorOverrides = {
+		MainFrame = Color3.fromRGB(230,230,230)
+	}
+})
+
+-------------------------------------------------------
+
+local lp = X.New({
+	Title = "Credit"
+})
+
+-------------------------------------------------------
+
+local s = lp.Button({
+	Text = "Credit",
+	Callback = function()
+
+	end,
+		Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Script By Nanachi_rbx"
+			})
+		end
+	}
+})
+
+local sa = lp.Button({
+	Text = "Announcement",
+	Callback = function()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Auto Get Gun이 제대로 작동하지 않네요 (가끔씩 안 됨)"
+			})
+		end
+	}
+})
+
+-------------------------------------------------------
+
+local lp = X.New({
+	Title = "LocalPlayer"
+})
+
+-------------------------------------------------------
+
+local s = lp.Button({
+	Text = "Kill",
+	Callback = function()
+		game.Players.LocalPlayer.Character.Humanoid.Health = 0
+	end,
+		Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "자기 자신을 죽입니다."
+			})
+		end
+	}
+})
+
+local B = lp.Slider({
+	Text = "WalkSpeed",
+	Callback = function(ws)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = ws * 1
+	end,
+	Min = 16,
+	Max = 500,
+	Def = 0
+})
+
+local C = lp.Slider({
+	Text = "JumpPower",
+	Callback = function(jp)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = jp * 1
+	end,
+	Min = 50,
+	Max = 500,
+	Def = 0
+})
+
+local H = lp.Toggle({
+	Text = "No Void",
+	Callback = function(Value)
+	    _G.Destroys = (Value)
+	    if _G.Destroys then
+	        game.Workspace.FallenPartsDestroyHeight = -99999
+	        else
+	            game.Workspace.FallenPartsDestroyHeight = -500
+	    end
+	end,
+	Enabled = false
+})
+
+local E = lp.TextField({
+	Text = "Teleport to Player",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Value].Character.HumanoidRootPart.CFrame
+	end,
+})
+
+-------------------------------------------------------
+
+local tp = X.New({
+	Title = "TP"
+})
+
+-------------------------------------------------------
+
+local F = tp.Button({
+	Text = "Spawn",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-235, 12.9999971, 275, 1, 1.02731875e-07, 1.67304322e-07, -1.02731875e-07, 1, 3.72574114e-08, -1.67304322e-07, -3.72574256e-08, 1)
+	end,
+})
+
+local G = tp.Button({
+	Text = "Gun Spawner",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-44.9428596, 14.9999971, 274.891998, -0.00386628741, 1.96161487e-08, -0.999992549, -2.00165342e-08, 1, 1.96936867e-08, 0.999992549, 2.0092525e-08, -0.00386628741)
+	end,
+})
+
+local G = tp.Button({
+	Text = "Secret Room",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(59.3999939, 27.5999947, 145.600037, -1.10631515e-13, -6.66754971e-08, 1, -2.84584747e-08, 1, 6.66754971e-08, -1, -2.84584747e-08, -1.12528998e-13)
+	end,
+})
+
+-------------------------------------------------------
+
+local cb = X.New({
+	Title = "Combat"
+})
+
+-------------------------------------------------------
+
+local G = cb.Button({
+	Text = "Random Kill",
+	Callback = function()
+		local num = math.random(1, #game.Players:GetChildren())
+
+				local args = {
+		[1] = game.Players:GetChildren()[num].Character.Humanoid
+		}
+
+		if game.Players.LocalPlayer ~= game.Players:GetChildren()[num] then
+    		game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("P", true).RemoteEvent:FireServer(unpack(args))
+		end
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "플레이어를 랜덤으로 찾아 죽입니다. (이거 사실 올킬 막혀서 넣은거임ㅎ)"
+			})
+		end
+	}
+})
+
+local H = cb.Toggle({
+	Text = "Auto Get Gun",
+	Callback = function(Value)
+	    game.workspace:FindFirstChildWhichIsA("MeshPart", true).Parent.Parent.Name = "AB1"
+	    _G.Destroys = (Value)
+	    while _G.Destroys do
+	    wait()
+	    if game.Players.LocalPlayer.Character.HumanoidRootPart then
+	    	firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.AB1.Part, 0)
+	    	firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.AB1.Part, 1)
+	    	end
+	    end
+	end,
+	Enabled = false
+})
+
+local E = cb.TextField({
+	Text = "Kill Player",
+	Callback = function(Value)
+		local args = {
+    		[1] = game:GetService("Players")[Value].Character.Humanoid
+		}
+
+		game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("P", true).RemoteEvent:FireServer(unpack(args))
+	end,
+})
+
+-------------------------------------------------------
+
+local mi = X.New({
+	Title = "Misc"
+})
+
+-------------------------------------------------------
+
+local A = mi.Button({
+	Text = "Drop Tools",
+	Callback = function()
+		local ws = game.Workspace
+		local wp = game.Players.LocalPlayer.Character
+		local bs = game:GetService("Players").LocalPlayer.Backpack
+		
+		while wait() do
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
+		    wp:FindFirstChildOfClass("Tool").Parent = ws
+		    if bs == nil then
+		        break
+		    end
+		end
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "모든 툴을 드롭합니다."
+			})
+		end
+	}
+})
+
+local H = mi.Toggle({
+	Text = "Crazy Vending Machine",
+	Callback = function(Value)
+	    _G.Destroys1 = (Value)
+	    while _G.Destroys1 do
+	    wait()
+	    	fireclickdetector(game:GetService("Workspace").AB2.Model.gator.ClickDetector)
+	    	-------------------------------------------------------
+	    	fireclickdetector(game:GetService("Workspace").AB2.Model.redb.ClickDetector)
+	    	-------------------------------------------------------
+	    	fireclickdetector(game:GetService("Workspace").AB2.Model.mtndew.ClickDetector)
+	    	-------------------------------------------------------
+	    	fireclickdetector(game:GetService("Workspace").AB2.Model.dietcoke.ClickDetector)
+	    	-------------------------------------------------------
+	    	fireclickdetector(game:GetService("Workspace").AB2.Model.aw.ClickDetector)
+	    	-------------------------------------------------------
+	    	fireclickdetector(game:GetService("Workspace").AB2.Model["7up"].ClickDetector)
+	    	-------------------------------------------------------
+	    	fireclickdetector(game:GetService("Workspace").AB2.Model.pepsi.ClickDetector)
+	    	-------------------------------------------------------
+	    	fireclickdetector(game:GetService("Workspace").AB2.Model.coke.ClickDetector)
+	    	-------------------------------------------------------
+	    	fireclickdetector(game:GetService("Workspace").AB2.Model.drpep.ClickDetector)
+	    	-------------------------------------------------------
+	    	fireclickdetector(game:GetService("Workspace").AB2.Model.fanta.ClickDetector)
+	    	-------------------------------------------------------
+	    	fireclickdetector(game:GetService("Workspace").AB2.Model.lipton.ClickDetector)
+	    	-------------------------------------------------------
+	    	fireclickdetector(game:GetService("Workspace").AB2.Model.sprite.ClickDetector)
+	    end
+	end,
+	Enabled = false
+})
+
+local L = mi.Toggle({
+	Text = "Crazy Light (광과민성 주의)",
+	Callback = function(Value)
+	    _G.Destroys3 = (Value)
+	    while _G.Destroys3 do
+	    wait()
+	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.LivingRoomLights.LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"]["Living Room"].GasFireplace.Dial.Interactive.ClickDetector)
+	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.KitchenLights.LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.DiningRoomLights.LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.KitchenLights.LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.KitchenLights.LightSwitch.Interactive.ClickDetector)
+--
+	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.GirlsBedroomLights.LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"]["Girl's Bedroom"].Lamp.Interactive.ClickDetector)
+--
+	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.OfficeLights.LightSwitch.Interactive.ClickDetector)
+--
+	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.BoysBedroomLights.LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"]["Boy's Bedroom"].DeskLamp.Interactive.ClickDetector)
+--
+	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.BathroomLights.LightSwitch.Interactive.ClickDetector)
+--
+	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.HallLights.LightSwitch.Interactive.ClickDetector)
+--
+	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.MasterBedroomLights.LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"]["Master Bedroom"].Lamp.Interactive.ClickDetector)
+--
+	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights["Garage Lights"].LightSwitch.Interactive.ClickDetector)
+--
+	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.EntranceLights.LightSwitch.Interactive.ClickDetector)
+--
+	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"]["Living Room"].Lamp.Interactive.ClickDetector)
+	    end
+	end,
+	Enabled = false
+})
+
+-------------------------------------------------------
+
+game.Workspace.AB4.Parent = game:GetService("Workspace").SpawnLocation
+
+wait()
+
+game:GetService("Workspace").SpawnLocation.AB4.Parent = game:GetService("Workspace")
+
+wait()
+
+game.workspace:FindFirstChildOfClass("MeshPart").Parent = game:GetService("Workspace").SpawnLocation
+
+wait()
+
+for i=1, 150 do
+    game.workspace:FindFirstChild("P").Parent = game:GetService("Workspace").SpawnLocation
+end

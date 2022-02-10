@@ -1,0 +1,118 @@
+local Material = loadstring(game:HttpGet("https://pastebin.com/raw/Uf3cpFfW"))()
+
+wait(7.7)
+
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+-------------------------------------------------------
+
+local X = Material.Load({
+	Title = "Nanachi Hub",
+	Style = 2,
+	SizeX = 470,
+	SizeY = 230,
+	Theme = "Mocha",
+	ColorOverrides = {
+		MainFrame = Color3.fromRGB(230,230,230)
+	}
+})
+
+-------------------------------------------------------
+
+local lp = X.New({
+	Title = "Credit"
+})
+
+-------------------------------------------------------
+
+local s = lp.Button({
+	Text = "Credit",
+	Callback = function()
+
+	end,
+		Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Script By Nanachi_rbx"
+			})
+		end
+	}
+})
+
+-------------------------------------------------------
+
+local lp = X.New({
+	Title = "LocalPlayer"
+})
+
+-------------------------------------------------------
+
+local B = lp.Slider({
+	Text = "WalkSpeed",
+	Callback = function(ws)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = ws * 1
+	end,
+	Min = 16,
+	Max = 500,
+	Def = 0
+})
+
+local C = lp.Slider({
+	Text = "JumpPower",
+	Callback = function(jp)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = jp * 1
+	end,
+	Min = 50,
+	Max = 500,
+	Def = 0
+})
+
+local E = lp.TextField({
+	Text = "Teleport Player",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Value].Character.HumanoidRootPart.CFrame
+	end,
+})
+
+-------------------------------------------------------
+
+local lb = X.New({
+	Title = "Lucky Blocks"
+})
+
+-------------------------------------------------------
+
+local J = lb.Button({
+	Text = "Nomal LuckyBlock",
+	Callback = function()
+	    game:GetService("ReplicatedStorage").SpawnLuckyBlock:FireServer()
+	end,
+})
+
+local J = lb.Button({
+	Text = "Super LuckyBlock",
+	Callback = function()
+	    game:GetService("ReplicatedStorage").SpawnSuperBlock:FireServer()
+	end,
+})
+
+local J = lb.Button({
+	Text = "Diamond LuckyBlock",
+	Callback = function()
+	    game:GetService("ReplicatedStorage").SpawnDiamondBlock:FireServer()
+	end,
+})
+
+local J = lb.Button({
+	Text = "Rainbow LuckyBlock",
+	Callback = function()
+	    game:GetService("ReplicatedStorage").SpawnRainbowBlock:FireServer()
+	end,
+})
+
+local J = lb.Button({
+	Text = "Galaxy LuckyBlock",
+	Callback = function()
+	    game:GetService("ReplicatedStorage").SpawnGalaxyBlock:FireServer()
+	end,
+})

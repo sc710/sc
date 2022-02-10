@@ -1,0 +1,219 @@
+local Material = loadstring(game:HttpGet("https://pastebin.com/raw/Uf3cpFfW"))()
+
+wait(7.7)
+
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+-------------------------------------------------------
+
+local X = Material.Load({
+	Title = "Nanachi Hub",
+	Style = 2,
+	SizeX = 470,
+	SizeY = 230,
+	Theme = "Mocha",
+	ColorOverrides = {
+		MainFrame = Color3.fromRGB(230,230,230)
+	}
+})
+
+-------------------------------------------------------
+
+local lp = X.New({
+	Title = "Credit"
+})
+
+-------------------------------------------------------
+
+local s = lp.Button({
+	Text = "Credit",
+	Callback = function()
+
+	end,
+		Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Script By Nanachi_rbx"
+			})
+		end
+	}
+})
+
+-------------------------------------------------------
+
+local lp = X.New({
+	Title = "LocalPlayer"
+})
+
+-------------------------------------------------------
+
+local A = lp.Button({
+	Text = "Copy GreenBalloon",
+	Callback = function()
+		local gb = game.Workspace:FindFirstChild("GreenBalloon", true)
+		local clone = gb:Clone()
+		clone.Parent = game.Players.LocalPlayer.Character
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "워크스페이스에 있는 풍선을 복제합니다."
+			})
+		end
+	}
+})
+
+local B = lp.Slider({
+	Text = "WalkSpeed",
+	Callback = function(ws)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = ws * 1
+	end,
+	Min = 16,
+	Max = 500,
+	Def = 0
+})
+
+local C = lp.Slider({
+	Text = "JumpPower",
+	Callback = function(jp)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = jp * 1
+	end,
+	Min = 50,
+	Max = 500,
+	Def = 0
+})
+
+local D = lp.Toggle({
+	Text = "Remove Fall Damage Script",
+	Callback = function(Value)
+	    _G.Destroys = (Value)
+	    while _G.Destroys do
+	    wait(0.1)
+	    if game.Players.LocalPlayer.Character:FindFirstChild("FallDamageScript") then
+	    game.Players.LocalPlayer.Character.FallDamageScript:Destroy()
+	    end
+	    end
+	end,
+	Enabled = false
+})
+
+local E = lp.TextField({
+	Text = "Teleport Player",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Value].Character.HumanoidRootPart.CFrame
+	end,
+})
+
+-------------------------------------------------------
+
+local tp = X.New({
+	Title = "TP"
+})
+
+-------------------------------------------------------
+
+local F = tp.Button({
+	Text = "Lobby",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-280.000549, 179.497955, 341.013824, 1, 2.41560407e-08, 0.000225892771, -2.41618245e-08, 1, 2.56014197e-08, -0.000225892771, -2.56068766e-08, 1)
+	end,
+})
+
+local G = tp.Button({
+	Text = "Island",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-128.879837, 47.397995, 10.8887873, -0.0174517296, -7.14623312e-08, -0.99984771, -3.30206511e-08, 1, -7.08968599e-08, 0.99984771, 3.17783488e-08, -0.0174517296)
+	end,
+})
+
+-------------------------------------------------------
+
+local fa = X.New({
+	Title = "Farm"
+})
+
+-------------------------------------------------------
+
+local H = fa.Toggle({
+	Text = "Auto Lobby TP",
+	Callback = function(Value)
+	    _G.Destroys = (Value)
+	    while _G.Destroys do
+	    wait(0.1)
+	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-280.000549, 179.497955, 341.013824, 1, 2.41560407e-08, 0.000225892771, -2.41618245e-08, 1, 2.56014197e-08, -0.000225892771, -2.56068766e-08, 1)
+	    end
+	end,
+	Enabled = false
+})
+
+-------------------------------------------------------
+
+local mi = X.New({
+	Title = "Misc"
+})
+
+-------------------------------------------------------
+
+local J = mi.Button({
+	Text = "Remove Cloud",
+	Callback = function()
+        game:GetService("Workspace").Structure:FindFirstChild("Cloud"):Destroy()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "오늘 날씨는 맑을 예정입니다~"
+			})
+		end
+	}
+})
+
+local K = mi.Button({
+	Text = "Remove SendStormGui",
+	Callback = function()
+        game:GetService("Players").LocalPlayer.PlayerGui.SandStormGui:Destroy()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "KF94마스크 쓰셔야죠"
+			})
+		end
+	}
+})
+
+local L = mi.Button({
+	Text = "Remove BlizzardGui",
+	Callback = function()
+        game:GetService("Workspace").Structure.BlizzardGui:Destroy()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "추워.."
+			})
+		end
+	}
+})
+
+local M = mi.Slider({
+	Text = "Fog Value",
+	Callback = function(Value)
+		game:GetService("Lighting").FogStart = Value * 1
+	end,
+	Min = 500,
+	Max = 4000,
+	Def = 0
+})
+
+local N = mi.Toggle({
+	Text = "Map Vote Gui",
+	Callback = function(Value)
+	    if Value == true then
+	    game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MapVotePage.Visible = true
+	    else
+	        game:GetService("Players").LocalPlayer.PlayerGui.MainGui.MapVotePage.Visible = false
+	    end
+	end,
+	Enabled = false
+})

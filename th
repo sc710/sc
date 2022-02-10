@@ -1,0 +1,146 @@
+local Material = loadstring(game:HttpGet("https://pastebin.com/raw/Uf3cpFfW"))()
+
+wait(7.7)
+
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+-------------------------------------------------------
+
+local X = Material.Load({
+	Title = "Nanachi Hub",
+	Style = 2,
+	SizeX = 470,
+	SizeY = 230,
+	Theme = "Mocha",
+	ColorOverrides = {
+		MainFrame = Color3.fromRGB(230,230,230)
+	}
+})
+
+-------------------------------------------------------
+
+local lp = X.New({
+	Title = "Credit"
+})
+
+-------------------------------------------------------
+
+local s = lp.Button({
+	Text = "Credit",
+	Callback = function()
+
+	end,
+		Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Script By Nanachi_rbx"
+			})
+		end
+	}
+})
+
+-------------------------------------------------------
+
+local lp = X.New({
+	Title = "LocalPlayer"
+})
+
+-------------------------------------------------------
+
+local me = game.Players.LocalPlayer.Name
+
+local F = lp.Button({
+	Text = "God Mod",
+	Callback = function()
+		for i,v in pairs(game:GetService("Workspace")[me]:GetChildren()) do
+                if v.Name == "hitbox" then
+            v:ClearAllChildren()
+        end
+            end
+	end,
+})
+
+local B = lp.Slider({
+	Text = "WalkSpeed",
+	Callback = function(ws)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = ws * 1
+	end,
+	Min = 16,
+	Max = 500,
+	Def = 0
+})
+
+local C = lp.Slider({
+	Text = "JumpPower",
+	Callback = function(jp)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = jp * 1
+	end,
+	Min = 50,
+	Max = 500,
+	Def = 0
+})
+
+local D = lp.Toggle({
+	Text = "Time Stop!",
+	Callback = function(ts)
+	    game:GetService("Players").LocalPlayer.PlayerScripts.timefreeze.Value = ts
+	end,
+	Enabled = false
+})
+
+local E = lp.TextField({
+	Text = "Teleport Player",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Value].Character.HumanoidRootPart.CFrame
+	end,
+})
+
+-------------------------------------------------------
+
+local tp = X.New({
+	Title = "Teleports"
+})
+
+-------------------------------------------------------
+
+local F = tp.Button({
+	Text = "Start",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2.54372225e-07, -3.75000238, -0.0100098662, -8.53434212e-14, -6.39946123e-08, 1, -7.13317334e-08, 1, 6.39946123e-08, -1, -7.13317334e-08, -8.99082648e-14)
+	end,
+})
+
+local G = tp.Button({
+	Text = "End",
+	Callback = function()
+		for i,v in pairs(game:GetService("Workspace").tower.sections.finish:GetChildren()) do
+    if v.Name == "FinishGlow" then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+    end
+end
+	end,
+})
+
+-------------------------------------------------------
+
+local fa = X.New({
+	Title = "Farm"
+})
+
+-------------------------------------------------------
+
+local H = fa.Toggle({
+	Text = "Auto End TP",
+	Callback = function(Value)
+	    _G.Destroys = (Value)
+	    while _G.Destroys do
+	    wait(0.1)
+	    for i,v in pairs(game:GetService("Workspace").tower.sections.finish:GetChildren()) do
+            if v.Name == "FinishGlow" then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+            end
+        end
+	    end
+	end,
+	Enabled = false
+})

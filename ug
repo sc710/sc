@@ -1,6 +1,10 @@
 game.workspace:FindFirstChild("gator", true).Parent.Parent.Name = "AB2"
 game.workspace:FindFirstChild("Fridge", true).Parent.Parent.Parent.Name = "AB3"
-game.workspace:FindFirstChild("FrontRightWheel", true).Parent.Parent.Name = "AB4"
+game.workspace:FindFirstChildOfClass("Sound", true).Parent = game.Stats
+game.workspace.AB3.Parent = game:GetService("Workspace").SpawnLocation
+wait()
+game.workspace.SpawnLocation.AB3.Parent = game:GetService("Workspace")
+game.workspace:FindFirstChild("Sound", true).Parent.Parent.Name = "AB4"
 
 -------------------------------------------------------
 
@@ -461,6 +465,7 @@ local L = mi.Toggle({
 })
 
 -------------------------------------------------------
+game.Stats:FindFirstChildOfClass("Sound").Parent = game.Workspace
 
 game.Workspace.AB4.Parent = game:GetService("Workspace").SpawnLocation
 

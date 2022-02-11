@@ -166,7 +166,12 @@ local G = cb.Button({
 		}
 
 		if game.Players.LocalPlayer ~= game.Players:GetChildren()[num] then
-    		game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("P", true).RemoteEvent:FireServer(unpack(args))
+    		if game.Players.LocalPlayer.Character:FindFirstChild("P", true) then
+		        game.Players.LocalPlayer.Character.P.RemoteEvent:FireServer(unpack(args))
+		    end
+		    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("P", true) then
+		        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("P", true).RemoteEvent:FireServer(unpack(args))
+	        end
 		end
 	end,
 	Menu = {
@@ -200,8 +205,13 @@ local E = cb.TextField({
 		local args = {
     		[1] = game:GetService("Players")[Value].Character.Humanoid
 		}
-
-		game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("P", true).RemoteEvent:FireServer(unpack(args))
+		
+		if game.Players.LocalPlayer.Character:FindFirstChild("P", true) then
+		game.Players.LocalPlayer.Character.P.RemoteEvent:FireServer(unpack(args))
+		end
+		if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("P", true) then
+		    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("P", true).RemoteEvent:FireServer(unpack(args))
+	    end
 	end,
 })
 

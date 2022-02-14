@@ -1,5 +1,8 @@
 game.workspace:FindFirstChild("gator", true).Parent.Parent.Name = "AB2"
 game.workspace:FindFirstChild("Fridge", true).Parent.Parent.Parent.Name = "AB3"
+if game.workspace:FindFirstChild("Folder") then
+    game.workspace:FindFirstChild("Folder"):Destroy()
+end
 
 -------------------------------------------------------
 
@@ -51,7 +54,7 @@ local sa = lp.Button({
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "버그 해결중"
+				Text = "Grab Tools가 추가되었습니다. 버그는 YouTube 댓글로 부탁드립니다."
 			})
 		end
 	}
@@ -186,7 +189,6 @@ local G = cb.Button({
 local H = cb.Toggle({
 	Text = "Auto Get Gun",
 	Callback = function(Value)
-	    game.workspace:FindFirstChildWhichIsA("MeshPart", true).Parent.Parent.Name = "AB1"
 	    _G.Destroys = (Value)
 	    while _G.Destroys do
 	    wait()
@@ -391,7 +393,26 @@ local A = mi.Button({
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "모든 툴을 드롭합니다."
+				Text = "모든 툴을 떨어트립니다."
+			})
+		end
+	}
+})
+
+local g = mi.Button({
+	Text = "Grab Tools",
+	Callback = function()
+		while wait() do
+    		game.workspace:FindFirstChildOfClass("Tool").Parent = game.workspace.Tools
+		    for i, v in pairs(game.Workspace:FindFirstChild("Tools"):GetChildren()) do
+		        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v:FindFirstChild("Handle", true), 0)
+		    end
+		end
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "모든 툴을 집습니다."
 			})
 		end
 	}
@@ -482,8 +503,16 @@ game.Workspace.AB4.Parent = game:GetService("Workspace").SpawnLocation
 
 wait()
 
+game.workspace:FindFirstChildWhichIsA("MeshPart", true).Parent.Parent.Name = "AB1"
+
+wait()
+
 game:GetService("Workspace").SpawnLocation.AB4.Parent = game:GetService("Workspace")
 
+wait()
+
+local fo = Instance.new("Folder", workspace)
+fo.Name = "Tools"
 wait()
 
 for i=1, 150 do

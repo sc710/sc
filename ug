@@ -15,7 +15,7 @@ local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinl
 -------------------------------------------------------
 
 local X = Material.Load({
-	Title = "Nanachi Hub",
+	Title = " Nanachi Hub",
 	Style = 2,
 	SizeX = 470,
 	SizeY = 230,
@@ -34,7 +34,7 @@ local lp = X.New({
 -------------------------------------------------------
 
 local s = lp.Button({
-	Text = "Credit",
+	Text = "Credit (... 클릭)",
 	Callback = function()
 
 	end,
@@ -48,13 +48,13 @@ local s = lp.Button({
 })
 
 local sa = lp.Button({
-	Text = "Announcement",
+	Text = "Announcement (... 클릭)",
 	Callback = function()
 	end,
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "Grab Tools가 추가되었습니다. 버그는 YouTube 댓글로 부탁드립니다."
+				Text = "Auto Get Gun (Workspace)가 추가되었습니다. (모든 총을 집습니다.)"
 			})
 		end
 	}
@@ -187,7 +187,7 @@ local G = cb.Button({
 })
 
 local H = cb.Toggle({
-	Text = "Auto Get Gun",
+	Text = "Auto Get Gun (Spawner)",
 	Callback = function(Value)
 	    _G.Destroys = (Value)
 	    while _G.Destroys do
@@ -217,15 +217,17 @@ local E = cb.TextField({
 	end,
 })
 
+
+
 -------------------------------------------------------
 
-local mi = X.New({
-	Title = "Misc"
+local to = X.New({
+	Title = "Tool"
 })
 
 -------------------------------------------------------
 
-local A = mi.Button({
+local A = to.Button({
 	Text = "Drop Tools",
 	Callback = function()
 		local ws = game.Workspace
@@ -399,7 +401,7 @@ local A = mi.Button({
 	}
 })
 
-local g = mi.Button({
+local g = to.Button({
 	Text = "Grab Tools",
 	Callback = function()
 		while wait() do
@@ -417,6 +419,29 @@ local g = mi.Button({
 		end
 	}
 })
+
+local H = to.Toggle({
+	Text = "Auto Get Gun (Workspace)",
+	Callback = function(Value)
+	    _G.Destroys = (Value)
+	    while _G.Destroys do
+	    wait()
+	    game.workspace:WaitForChild("P").Parent = game.workspace.Tools
+	        for i, v in pairs(game.Workspace:FindFirstChild("Tools"):GetChildren()) do
+	            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v:FindFirstChild("Handle", true), 0)
+            end
+	    end
+	end,
+	Enabled = false
+})
+
+-------------------------------------------------------
+
+local mi = X.New({
+	Title = "Misc"
+})
+
+-------------------------------------------------------
 
 local H = mi.Toggle({
 	Text = "Crazy Vending Machine",

@@ -54,7 +54,7 @@ local sa = lp.Button({
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "Auto Get Gun (Workspace)가 추가되었습니다. (모든 총을 집습니다.)"
+				Text = "Auto Grab Gun (Workspace)가 추가되었습니다. (모든 총을 집습니다.)"
 			})
 		end
 	}
@@ -187,7 +187,7 @@ local G = cb.Button({
 })
 
 local H = cb.Toggle({
-	Text = "Auto Get Gun (Spawner)",
+	Text = "Auto Get Gun",
 	Callback = function(Value)
 	    _G.Destroys = (Value)
 	    while _G.Destroys do
@@ -421,7 +421,7 @@ local g = to.Button({
 })
 
 local H = to.Toggle({
-	Text = "Auto Get Gun (Workspace)",
+	Text = "Auto Grab Gun",
 	Callback = function(Value)
 	    _G.Destroys = (Value)
 	    while _G.Destroys do

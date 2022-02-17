@@ -423,8 +423,8 @@ local g = to.Button({
 local H = to.Toggle({
 	Text = "Auto Grab Gun",
 	Callback = function(Value)
-	    _G.Destroys = (Value)
-	    while _G.Destroys do
+	    _G.Destroys1 = (Value)
+	    while _G.Destroys1 do
 	    wait()
 	    game.workspace:WaitForChild("P").Parent = game.workspace.Tools
 	        for i, v in pairs(game.Workspace:FindFirstChild("Tools"):GetChildren()) do
@@ -446,8 +446,8 @@ local mi = X.New({
 local H = mi.Toggle({
 	Text = "Crazy Vending Machine",
 	Callback = function(Value)
-	    _G.Destroys1 = (Value)
-	    while _G.Destroys1 do
+	    _G.Destroys2 = (Value)
+	    while _G.Destroys2 do
 	    wait()
 	    	fireclickdetector(game:GetService("Workspace").AB2.Model.gator.ClickDetector)
 	    	-------------------------------------------------------

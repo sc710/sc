@@ -169,12 +169,7 @@ local G = cb.Button({
 		}
 
 		if game.Players.LocalPlayer ~= game.Players:GetChildren()[num] then
-    		if game.Players.LocalPlayer.Character:FindFirstChild("P", true) then
-		        game.Players.LocalPlayer.Character.P.RemoteEvent:FireServer(unpack(args))
-		    end
-		    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("P", true) then
-		        game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("P", true).RemoteEvent:FireServer(unpack(args))
-	        end
+		    game:FindFirstChild("P", true).RemoteEvent:FireServer(unpack(args))
 		end
 	end,
 	Menu = {
@@ -208,12 +203,7 @@ local E = cb.TextField({
     		[1] = game:GetService("Players")[Value].Character.Humanoid
 		}
 		
-		if game.Players.LocalPlayer.Character:FindFirstChild("P", true) then
-		game.Players.LocalPlayer.Character.P.RemoteEvent:FireServer(unpack(args))
-		end
-		if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("P", true) then
-		    game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("P", true).RemoteEvent:FireServer(unpack(args))
-	    end
+		game:FindFirstChild("P", true).RemoteEvent:FireServer(unpack(args))
 	end,
 })
 
@@ -516,7 +506,16 @@ local L = mi.Toggle({
 })
 
 -------------------------------------------------------
+
 game.workspace:FindFirstChildOfClass("MeshPart").Parent = game:GetService("Workspace").SpawnLocation
+
+wait()
+
+game.workspace:FindFirstChildWhichIsA("MeshPart", true).Parent.Parent.Name = "AB1"
+
+wait()
+
+game.workspace.SpawnLocation:FindFirstChildOfClass("MeshPart").Parent = game:GetService("Workspace")
 
 wait()
 
@@ -528,7 +527,7 @@ game.Workspace.AB4.Parent = game:GetService("Workspace").SpawnLocation
 
 wait()
 
-game.workspace:FindFirstChildWhichIsA("MeshPart", true).Parent.Parent.Name = "AB1"
+game.Workspace.AB3.Parent = game:GetService("Workspace").SpawnLocation
 
 wait()
 
@@ -536,10 +535,39 @@ game:GetService("Workspace").SpawnLocation.AB4.Parent = game:GetService("Workspa
 
 wait()
 
-local fo = Instance.new("Folder", workspace)
-fo.Name = "Tools"
+game.Workspace.SpawnLocation.AB3.Parent = game:GetService("Workspace")
+
 wait()
 
-for i=1, 150 do
+local fo = Instance.new("Folder", workspace)
+fo.Name = "Tools"
+
+wait()
+
+while wait() do
     game.workspace:FindFirstChild("P").Parent = game:GetService("Workspace").SpawnLocation
+    if game.workspace:FindFirstChild("P") == nil then
+        break
+    end
 end
+
+wait(1)
+
+while wait() do
+    game.workspace.SpawnLocation:FindFirstChild("P").Parent = game:GetService("Workspace")
+    if game.workspace.SpawnLocation:FindFirstChild("P") == nil then
+        break
+    end
+end
+
+wait()
+
+game.workspace:FindFirstChildOfClass("MeshPart").Parent = game:GetService("Workspace").SpawnLocation
+
+wait()
+
+game.workspace:FindFirstChildWhichIsA("MeshPart", true).Parent.Parent.Name = "AB1"
+
+wait()
+
+game.workspace.SpawnLocation:FindFirstChildOfClass("MeshPart").Parent = game:GetService("Workspace")

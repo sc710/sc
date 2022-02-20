@@ -54,7 +54,7 @@ local sa = lp.Button({
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "Auto Shoot Gun 추가! 게임에 있는 모든 총을 쏩니다. 물론 자신 총도 포함~ (도중 안돼면 on/off 스위치 껏다 켜보세요.)"
+				Text = "Auto Shoot Gun 추가! 게임에 있는 모든 총을 쏩니다. 물론 자신 총도 포함~ (나중에 수정해봄) (도중 안되면 on/off 스위치 껏다 켜보세요.)"
 			})
 		end
 	}

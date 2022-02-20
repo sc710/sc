@@ -54,7 +54,7 @@ local sa = lp.Button({
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "Auto Grab Gun (Workspace)가 추가되었습니다. (모든 총을 집습니다.)"
+				Text = "Auto Shoot Gun 추가! 게임에 있는 모든 총을 쏩니다. 물론 자신 총도 포함~ (도중 안돼면 on/off 스위치 껏다 켜보세요.)"
 			})
 		end
 	}

@@ -490,7 +490,7 @@ local H = mi.Toggle({
 })
 
 local L = mi.Toggle({
-	Text = "Crazy Light ( 주의)",
+	Text = "Crazy Light (렉 주의)",
 	Callback = function(Value)
 	    _G.Destroys4 = (Value)
 	    while _G.Destroys4 do

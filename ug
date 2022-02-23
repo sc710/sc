@@ -586,7 +586,7 @@ wait()
 
 game.workspace:FindFirstChildOfClass("MeshPart").Parent = game:GetService("Workspace").SpawnLocation
 
-wait()
+wait(1)
 
 game.workspace:FindFirstChildWhichIsA("MeshPart", true).Parent.Parent.Name = "AB1"
 

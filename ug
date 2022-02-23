@@ -54,7 +54,7 @@ local sa = lp.Button({
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "Auto Shoot Gun 추가! 게임에 있는 모든 총을 쏩니다. 물론 자신 총도 포함~ (나중에 수정해봄) (도중 안되면 on/off 스위치 껏다 켜 보세요.)"
+				Text = "텔레포트 House 추가, 그 외 버그 "
 			})
 		end
 	}
@@ -141,6 +141,13 @@ local G = tp.Button({
 	Text = "Gun Spawner",
 	Callback = function()
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-44.9428596, 14.9999971, 274.891998, -0.00386628741, 1.96161487e-08, -0.999992549, -2.00165342e-08, 1, 1.96936867e-08, 0.999992549, 2.0092525e-08, -0.00386628741)
+	end,
+})
+
+local G = tp.Button({
+	Text = "House",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(42.3999405, 15.2000008, 181.09996, 0.00870427676, -1.17559562e-09, -0.999962091, 6.54378163e-10, 1, -1.16994403e-09, 0.999962091, -6.44169829e-10, 0.00870427676)
 	end,
 })
 

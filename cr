@@ -11,8 +11,8 @@ local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinl
 -------------------------------------------------------
 
 local X = Material.Load({
-	Title = "Nanachi Hub",
-	Style = 2,
+	Title = " Nanachi Hub",
+	Style = 3,
 	SizeX = 470,
 	SizeY = 230,
 	Theme = "Mocha",

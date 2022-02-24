@@ -16,7 +16,7 @@ local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinl
 
 local X = Material.Load({
 	Title = " Nanachi Hub",
-	Style = 2,
+	Style = 3,
 	SizeX = 470,
 	SizeY = 230,
 	Theme = "Mocha",
@@ -54,7 +54,20 @@ local sa = lp.Button({
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "텔레포트 House 추가, 그 외 버그 "
+				Text = "스위치가 켜져 있는데 가끔씩 작동이 안 되면 스위치를 껐다 켜 보세요."
+			})
+		end
+	}
+})
+
+local sa = lp.Button({
+	Text = "Update (... 클릭)",
+	Callback = function()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "1.Gui 스타일 변경, 2.Naruto추가, 3.텔레포트 House추가"
 			})
 		end
 	}
@@ -189,7 +202,7 @@ local G = cb.Button({
 })
 
 local H = cb.Toggle({
-	Text = "Auto Shoot Gun (All Gun)",
+	Text = "Auto Shoot Gun (All)",
 	Callback = function(Value)
 	    _G.Destroys = (Value)
 	    while _G.Destroys do
@@ -497,7 +510,7 @@ local H = mi.Toggle({
 })
 
 local L = mi.Toggle({
-	Text = "Crazy Light (렉 주의)",
+	Text = "Crazy Light (Ping Worning)",
 	Callback = function(Value)
 	    _G.Destroys4 = (Value)
 	    while _G.Destroys4 do
@@ -530,6 +543,27 @@ local L = mi.Toggle({
 --
 	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"]["Living Room"].Lamp.Interactive.ClickDetector)
 	    end
+	end,
+	Enabled = false
+})
+
+local L = mi.Toggle({
+	Text = "Naruto (Crazy Random Teleport)",
+	Callback = function(Value)
+	    _G.Destroys5 = (Value)
+	    while _G.Destroys5 do
+	        while _G.Destroys5 do
+	            while _G.Destroys5 do
+	                while _G.Destroys5 do
+	                    while _G.Destroys5 do
+	                    wait(0.1)
+	    	                local num = math.random(1, #game.Players:GetChildren())
+	                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:GetChildren()[num].Character.HumanoidRootPart.CFrame
+	                    end
+	                end
+                end
+            end
+        end
 	end,
 	Enabled = false
 })

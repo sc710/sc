@@ -614,7 +614,17 @@ while wait() do
     end
 end
 
+wait()
+
+game.workspace:FindFirstChildOfClass("MeshPart").Parent = game:GetService("Workspace").SpawnLocation
+
 wait(1)
+
+game.workspace:FindFirstChildWhichIsA("MeshPart", true).Parent.Parent.Name = "AB1"
+
+wait()
+
+game.workspace.SpawnLocation:FindFirstChildOfClass("MeshPart").Parent = game:GetService("Workspace")
 
 while wait() do
     game.workspace.SpawnLocation:FindFirstChild("P").Parent = game:GetService("Workspace")
@@ -622,15 +632,3 @@ while wait() do
         break
     end
 end
-
-wait()
-
-game.workspace:FindFirstChildOfClass("MeshPart").Parent = game:GetService("Workspace").SpawnLocation
-
-wait(2)
-
-game.workspace:FindFirstChildWhichIsA("MeshPart", true).Parent.Parent.Name = "AB1"
-
-wait()
-
-game.workspace.SpawnLocation:FindFirstChildOfClass("MeshPart").Parent = game:GetService("Workspace")

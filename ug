@@ -574,10 +574,6 @@ game.workspace:FindFirstChildOfClass("MeshPart").Parent = game:GetService("Works
 
 wait()
 
-game.workspace:FindFirstChildWhichIsA("MeshPart", true).Parent.Parent.Name = "AB1"
-
-wait()
-
 game.workspace.SpawnLocation:FindFirstChildOfClass("MeshPart").Parent = game:GetService("Workspace")
 
 wait()

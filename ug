@@ -67,7 +67,7 @@ local sa = lp.Button({
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "1.Gui 스타일 변경, 2.Naruto 추가, 3.텔레포트 House 추가"
+				Text = "설명 변경"
 			})
 		end
 	}

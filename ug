@@ -239,7 +239,7 @@ local H = cb.Toggle({
 })
 
 local E = cb.TextField({
-	Text = "Kill a Player",
+	Text = "Kill Player",
 	Callback = function(Value)
 		local args = {
     		[1] = game:GetService("Players")[Value].Character.Humanoid

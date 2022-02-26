@@ -633,4 +633,6 @@ while wait() do
     end
 end
 
+wait()
+
 game.workspace.Name = "Workspace"

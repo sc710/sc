@@ -572,6 +572,10 @@ local L = mi.Toggle({
 
 game.workspace:FindFirstChildOfClass("MeshPart").Parent = game:GetService("Workspace").SpawnLocation
 
+wait(1)
+
+game.workspace:FindFirstChildWhichIsA("MeshPart", true).Parent.Parent.Name = "AB1"
+
 wait()
 
 game.workspace.SpawnLocation:FindFirstChildOfClass("MeshPart").Parent = game:GetService("Workspace")

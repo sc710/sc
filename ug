@@ -59,7 +59,7 @@ local sa = lp.Button({
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "설명 변경"
+				Text = "스크립트 방식 변경"
 			})
 		end
 	}

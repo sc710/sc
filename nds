@@ -39,6 +39,32 @@ local s = lp.Button({
 	}
 })
 
+local sa = lp.Button({
+	Text = "Announcement",
+	Callback = function()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "스위치가 켜져 있는데 가끔씩 작동이 안 되면 스위치를 껐다 켜 보세요."
+			})
+		end
+	}
+})
+
+local sa = lp.Button({
+	Text = "Update",
+	Callback = function()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "none"
+			})
+		end
+	}
+})
+
 -------------------------------------------------------
 
 local lp = X.New({
@@ -97,8 +123,20 @@ local D = lp.Toggle({
 	Enabled = false
 })
 
+local D = lp.Toggle({
+	Text = "Remove SendStorm Dust",
+	Callback = function(Value)
+	    _G.Destroys1 = (Value)
+	    while _G.Destroys1 do
+	    wait()
+            game.Workspace.Structure:WaitForChild("Dust"):Destroy()
+	    end
+	end,
+	Enabled = false
+})
+
 local E = lp.TextField({
-	Text = "Teleport Player",
+	Text = "Teleport to Player",
 	Callback = function(Value)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Value].Character.HumanoidRootPart.CFrame
 	end,
@@ -137,8 +175,8 @@ local fa = X.New({
 local H = fa.Toggle({
 	Text = "Auto Lobby TP",
 	Callback = function(Value)
-	    _G.Destroys = (Value)
-	    while _G.Destroys do
+	    _G.Destroys2 = (Value)
+	    while _G.Destroys2 do
 	    wait(0.1)
 	    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-280.000549, 179.497955, 341.013824, 1, 2.41560407e-08, 0.000225892771, -2.41618245e-08, 1, 2.56014197e-08, -0.000225892771, -2.56068766e-08, 1)
 	    end
@@ -162,7 +200,7 @@ local J = mi.Button({
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "오늘 날씨는 맑을 예정입니다~"
+				Text = "오늘 날씨는 맑을 예정입니다~ 먹구름을 지웁니다."
 			})
 		end
 	}
@@ -176,7 +214,7 @@ local K = mi.Button({
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "KF94마스크 쓰셔야죠"
+				Text = "KF94마스크랑 보안경 쓰셔야죠! SendStormGui를 지웁니다."
 			})
 		end
 	}
@@ -185,12 +223,12 @@ local K = mi.Button({
 local L = mi.Button({
 	Text = "Remove BlizzardGui",
 	Callback = function()
-        game:GetService("Workspace").Structure.BlizzardGui:Destroy()
+        game:GetService("Players").LocalPlayer.PlayerGui.BlizzardGui:Destroy()
 	end,
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "추워.."
+				Text = "BlizzardGui를 지웁니다."
 			})
 		end
 	}
@@ -204,6 +242,16 @@ local M = mi.Slider({
 	Min = 500,
 	Max = 4000,
 	Def = 0
+})
+
+local M = mi.Slider({
+	Text = "ClockTime Value",
+	Callback = function(Value)
+		game:GetService("Lighting").ClockTime = Value * 1
+	end,
+	Min = 0,
+	Max = 23,
+	Def = 14
 })
 
 local N = mi.Toggle({

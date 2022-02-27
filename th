@@ -115,7 +115,7 @@ local D = lp.Toggle({
 })
 
 local E = lp.TextField({
-	Text = "Teleport Player",
+	Text = "Teleport to Player",
 	Callback = function(Value)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Value].Character.HumanoidRootPart.CFrame
 	end,

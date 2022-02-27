@@ -1,11 +1,3 @@
-game.workspace:FindFirstChild("gator", true).Parent.Parent.Name = "AB2"
-game.workspace:FindFirstChild("Fridge", true).Parent.Parent.Parent.Name = "AB3"
-if game.workspace:FindFirstChild("Folder") then
-    game.workspace:FindFirstChild("Folder"):Destroy()
-end
-
--------------------------------------------------------
-
 local Material = loadstring(game:HttpGet("https://pastebin.com/raw/Uf3cpFfW"))()
 
 wait(8.5)
@@ -206,7 +198,7 @@ local H = cb.Toggle({
 	Callback = function(Value)
 	    _G.Destroys = (Value)
 	    while _G.Destroys do
-		    wait(1)
+		    wait()
 		local num = math.random(1, #game.Players:GetChildren())
 
 		local args = {
@@ -227,13 +219,24 @@ local H = cb.Toggle({
 	Text = "Auto Get Gun",
 	Callback = function(Value)
 	    _G.Destroys1 = (Value)
-	    while _G.Destroys1 do
-	    wait()
-	    if game.Players.LocalPlayer.Character.HumanoidRootPart then
-	    	firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.AB1.Part, 0)
-	    	firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, game.workspace.AB1.Part, 1)
-	    	end
-	    end
+	    for i, v in pairs(game.Workspace:GetChildren()) do
+	        if v.Name == 'Model' then
+        	    for a, b in pairs(v:GetChildren()) do
+                    if b.Name == 'Part' then
+                        for c, d in pairs(b:GetChildren()) do
+                            if d.Name == 'Part' then
+                                 if d.CFrame == CFrame.new(-45, 12.1000004, 275, 0, 0, 1, 1, 0, 0, 0, 1, 0) then
+                                    while _G.Destroys1 do
+                                        wait()
+                                        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, b, 0)
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+	        end
+        end
 	end,
 	Enabled = false
 })
@@ -436,12 +439,66 @@ local A = to.Button({
 local g = to.Button({
 	Text = "Grab Tools",
 	Callback = function()
-		while wait() do
-    		game.workspace:FindFirstChildOfClass("Tool").Parent = game.workspace.Tools
-		    for i, v in pairs(game.Workspace:FindFirstChild("Tools"):GetChildren()) do
-		        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v:FindFirstChild("Handle", true), 0)
-		    end
-		end
+		for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "Light" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+		for i, a in pairs(game.Workspace:GetChildren()) do
+   			if a.Name == "BloxyCola" then
+				firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "Gatorade" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "RedBull" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "MountainDew" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "DietCoke" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "CreamSoda" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "Sevenup" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "Pepsi" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "Coke" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "DrPepper" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "Fanta" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "IceTea" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "Sprite" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "P" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
 	end,
 	Menu = {
 		Information = function(self)
@@ -458,9 +515,10 @@ local H = to.Toggle({
 	    _G.Destroys2 = (Value)
 	    while _G.Destroys2 do
 	    wait()
-	    game.workspace:WaitForChild("P").Parent = game.workspace.Tools
-	        for i, v in pairs(game.Workspace:FindFirstChild("Tools"):GetChildren()) do
-	            firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v:FindFirstChild("Handle", true), 0)
+	        for i, a in pairs(game.Workspace:GetChildren()) do
+                if a.Name == "P" then
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+                end
             end
 	    end
 	end,
@@ -481,29 +539,41 @@ local H = mi.Toggle({
 	    _G.Destroys3 = (Value)
 	    while _G.Destroys3 do
 	    wait()
-	    	fireclickdetector(game:GetService("Workspace").AB2.Model.gator.ClickDetector)
+	        for i, v in pairs(game.Workspace:GetChildren()) do
+                if v.Name == "Model" then
+            for a, b in pairs(v:GetChildren()) do
+                if b.Name == "Model" then
+            for c, d in pairs(b:GetChildren()) do
+                if d.Name == "gator" then
+	    	fireclickdetector(d.Parent.gator.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(game:GetService("Workspace").AB2.Model.redb.ClickDetector)
+	    	fireclickdetector(d.Parent.redb.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(game:GetService("Workspace").AB2.Model.mtndew.ClickDetector)
+	    	fireclickdetector(d.Parent.mtndew.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(game:GetService("Workspace").AB2.Model.dietcoke.ClickDetector)
+	    	fireclickdetector(d.Parent.dietcoke.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(game:GetService("Workspace").AB2.Model.aw.ClickDetector)
+	    	fireclickdetector(d.Parent.aw.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(game:GetService("Workspace").AB2.Model["7up"].ClickDetector)
+	    	fireclickdetector(d.Parent["7up"].ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(game:GetService("Workspace").AB2.Model.pepsi.ClickDetector)
+	    	fireclickdetector(d.Parent.pepsi.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(game:GetService("Workspace").AB2.Model.coke.ClickDetector)
+	    	fireclickdetector(d.Parent.coke.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(game:GetService("Workspace").AB2.Model.drpep.ClickDetector)
+	    	fireclickdetector(d.Parent.drpep.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(game:GetService("Workspace").AB2.Model.fanta.ClickDetector)
+	    	fireclickdetector(d.Parent.fanta.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(game:GetService("Workspace").AB2.Model.lipton.ClickDetector)
+	    	fireclickdetector(d.Parent.lipton.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(game:GetService("Workspace").AB2.Model.sprite.ClickDetector)
+	    	fireclickdetector(d.Parent.sprite.ClickDetector)
+                end
+            end
+                end
+end
+end
+end
 	    end
 	end,
 	Enabled = false
@@ -515,33 +585,41 @@ local L = mi.Toggle({
 	    _G.Destroys4 = (Value)
 	    while _G.Destroys4 do
 	    wait()
-	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.LivingRoomLights.LightSwitch.Interactive.ClickDetector)
-	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"]["Living Room"].GasFireplace.Dial.Interactive.ClickDetector)
-	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.KitchenLights.LightSwitch.Interactive.ClickDetector)
-	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.DiningRoomLights.LightSwitch.Interactive.ClickDetector)
-	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.KitchenLights.LightSwitch.Interactive.ClickDetector)
-	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.KitchenLights.LightSwitch.Interactive.ClickDetector)
+	    	for i, v in pairs(game.Workspace:GetChildren()) do
+                if v.Name == "Model" then
+            for a, b in pairs(v:GetChildren()) do
+                if b.Name == "Urban House" then
+	    	fireclickdetector(b.Body.Lights.LivingRoomLights.LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(b["Living Room"].GasFireplace.Dial.Interactive.ClickDetector)
+	    	fireclickdetector(b.Body.Lights.KitchenLights.LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(b.Body.Lights.DiningRoomLights.LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(b.Body.Lights.KitchenLights.LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(b.Body.Lights.KitchenLights.LightSwitch.Interactive.ClickDetector)
 --
-	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.GirlsBedroomLights.LightSwitch.Interactive.ClickDetector)
-	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"]["Girl's Bedroom"].Lamp.Interactive.ClickDetector)
+	    	fireclickdetector(b.Body.Lights.GirlsBedroomLights.LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(b["Girl's Bedroom"].Lamp.Interactive.ClickDetector)
 --
-	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.OfficeLights.LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(b.Body.Lights.OfficeLights.LightSwitch.Interactive.ClickDetector)
 --
-	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.BoysBedroomLights.LightSwitch.Interactive.ClickDetector)
-	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"]["Boy's Bedroom"].DeskLamp.Interactive.ClickDetector)
+	    	fireclickdetector(b.Body.Lights.BoysBedroomLights.LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(b["Boy's Bedroom"].DeskLamp.Interactive.ClickDetector)
 --
-	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.BathroomLights.LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(b.Body.Lights.BathroomLights.LightSwitch.Interactive.ClickDetector)
 --
-	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.HallLights.LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(b.Body.Lights.HallLights.LightSwitch.Interactive.ClickDetector)
 --
-	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.MasterBedroomLights.LightSwitch.Interactive.ClickDetector)
-	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"]["Master Bedroom"].Lamp.Interactive.ClickDetector)
+	    	fireclickdetector(b.Body.Lights.MasterBedroomLights.LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(b["Master Bedroom"].Lamp.Interactive.ClickDetector)
 --
-	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights["Garage Lights"].LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(b.Body.Lights["Garage Lights"].LightSwitch.Interactive.ClickDetector)
 --
-	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"].Body.Lights.EntranceLights.LightSwitch.Interactive.ClickDetector)
+	    	fireclickdetector(b.Body.Lights.EntranceLights.LightSwitch.Interactive.ClickDetector)
 --
-	    	fireclickdetector(game:GetService("Workspace").AB3["Urban House"]["Living Room"].Lamp.Interactive.ClickDetector)
+	    	fireclickdetector(b["Living Room"].Lamp.Interactive.ClickDetector)
+                        end
+                    end
+                end
+            end
 	    end
 	end,
 	Enabled = false
@@ -569,70 +647,3 @@ local L = mi.Toggle({
 })
 
 -------------------------------------------------------
-
-game.workspace:FindFirstChildOfClass("MeshPart").Parent = game:GetService("Workspace").SpawnLocation
-
-wait(1)
-
-game.workspace:FindFirstChildWhichIsA("MeshPart", true).Parent.Parent.Name = "AB1"
-
-wait()
-
-game.workspace.SpawnLocation:FindFirstChildOfClass("MeshPart").Parent = game:GetService("Workspace")
-
-wait()
-
-game.workspace:FindFirstChild("FrontLeftWheel", true).Parent.Parent.Name = "AB4"
-
-wait()
-
-game.Workspace.AB4.Parent = game:GetService("Workspace").SpawnLocation
-
-wait()
-
-game.Workspace.AB3.Parent = game:GetService("Workspace").SpawnLocation
-
-wait()
-
-game:GetService("Workspace").SpawnLocation.AB4.Parent = game:GetService("Workspace")
-
-wait()
-
-game.Workspace.SpawnLocation.AB3.Parent = game:GetService("Workspace")
-
-wait()
-
-local fo = Instance.new("Folder", workspace)
-fo.Name = "Tools"
-
-wait()
-
-while wait() do
-    game.workspace:FindFirstChild("P").Parent = game:GetService("Workspace").SpawnLocation
-    if game.workspace:FindFirstChild("P") == nil then
-        break
-    end
-end
-
-wait()
-
-game.workspace:FindFirstChildOfClass("MeshPart").Parent = game:GetService("Workspace").SpawnLocation
-
-wait(1)
-
-game.workspace:FindFirstChildWhichIsA("MeshPart", true).Parent.Parent.Name = "AB1"
-
-wait()
-
-game.workspace.SpawnLocation:FindFirstChildOfClass("MeshPart").Parent = game:GetService("Workspace")
-
-while wait() do
-    game.workspace.SpawnLocation:FindFirstChild("P").Parent = game:GetService("Workspace")
-    if game.workspace.SpawnLocation:FindFirstChild("P") == nil then
-        break
-    end
-end
-
-wait()
-
-game.workspace.Name = "Workspace"

@@ -98,7 +98,7 @@ local C = lp.Slider({
 })
 
 local E = lp.TextField({
-	Text = "Teleport Player",
+	Text = "Teleport  Player",
 	Callback = function(Value)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Value].Character.HumanoidRootPart.CFrame
 	end,

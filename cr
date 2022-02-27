@@ -43,6 +43,32 @@ local s = lp.Button({
 	}
 })
 
+local sa = lp.Button({
+	Text = "Announcement",
+	Callback = function()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "스위치가 켜져 있는데 가끔씩 작동이 안 되면 스위치를 껐다 켜 보세요."
+			})
+		end
+	}
+})
+
+local sa = lp.Button({
+	Text = "Update",
+	Callback = function()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "none"
+			})
+		end
+	}
+})
+
 -------------------------------------------------------
 
 local lp = X.New({

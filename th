@@ -1,13 +1,13 @@
 local Material = loadstring(game:HttpGet("https://pastebin.com/raw/Uf3cpFfW"))()
 
-wait(7.7)
+wait(8.5)
 
 local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
 
 -------------------------------------------------------
 
 local X = Material.Load({
-	Title = " Nanachi Hub",
+	Title = "Nanachi Hub",
 	Style = 3,
 	SizeX = 470,
 	SizeY = 230,

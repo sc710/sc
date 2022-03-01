@@ -198,7 +198,7 @@ local H = cb.Toggle({
 	Callback = function(Value)
 	    _G.Destroys = (Value)
 	    while _G.Destroys do
-		    wait(0.4)
+		    wait(0.01)
 		local num = math.random(1, #game.Players:GetChildren())
 
 		local args = {

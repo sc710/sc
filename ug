@@ -220,19 +220,11 @@ local H = cb.Toggle({
 	Callback = function(Value)
 	    _G.Destroys1 = (Value)
 	    for i, v in pairs(game.Workspace:GetChildren()) do
-	        if v.Name == 'Model' then
-        	    for a, b in pairs(v:GetChildren()) do
-                    if b.Name == 'Part' then
-                        for c, d in pairs(b:GetChildren()) do
-                            if d.Name == 'Part' then
-                                 if d.CFrame == CFrame.new(-45, 12.1000004, 275, 0, 0, 1, 1, 0, 0, 0, 1, 0) then
-                                    while _G.Destroys1 do
-                                        wait()
-                                        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, b, 0)
-                                    end
-                                end
-                            end
-                        end
+	        if v.Name == 'Part' then
+                if v.CFrame == CFrame.new(-45, 12.5, 275, -1, 0, 0, 0, 0, 1, 0, 1, -0) then
+                    while _G.Destroys1 do
+                    wait()
+                        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v, 0)
                     end
                 end
 	        end
@@ -497,6 +489,10 @@ end end
 end end
         for i, a in pairs(game.Workspace:GetChildren()) do
             if a.Name == "P" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "Text" then
                 firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
 end end
 	end,

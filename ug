@@ -172,7 +172,7 @@ local cb = X.New({
 -------------------------------------------------------
 
 local G = cb.Button({
-	Text = "Kill Random Players",
+	Text = "3월 2일 업데이트 이후로 막혔어요 ㅠㅠ",
 	Callback = function()
 		local num = math.random(1, #game.Players:GetChildren())
 
@@ -187,64 +187,11 @@ local G = cb.Button({
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "플레이어를 랜덤으로 찾아 죽입니다. (이거 사실 올킬 막혀서 넣은거임ㅎ)"
+				Text = "막힘"
 			})
 		end
 	}
 })
-
-local H = cb.Toggle({
-	Text = "Auto Shoot Gun (All Gun)",
-	Callback = function(Value)
-	    _G.Destroys = (Value)
-	    while _G.Destroys do
-		    wait(0.01)
-		local num = math.random(1, #game.Players:GetChildren())
-
-		local args = {
-		[1] = game.Players:GetChildren()[num].Character.Humanoid
-		}
-
-			if game.Players.LocalPlayer ~= game.Players:GetChildren()[num] then
-			    if game.Players.LocalPlayer:FindFirstChild("SISD", true) ~= game:FindFirstChild("P", true) then
-				    game:FindFirstChild("P", true).RemoteEvent:FireServer(unpack(args))
-				end
-			end
-		end
-	end,
-	Enabled = false
-})
-
-local H = cb.Toggle({
-	Text = "Auto Get Gun",
-	Callback = function(Value)
-	    _G.Destroys1 = (Value)
-	    for i, v in pairs(game.Workspace:GetChildren()) do
-	        if v.Name == 'Part' then
-                if v.CFrame == CFrame.new(-45, 12.5, 275, -1, 0, 0, 0, 0, 1, 0, 1, -0) then
-                    while _G.Destroys1 do
-                    wait()
-                        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v, 0)
-                    end
-                end
-	        end
-        end
-	end,
-	Enabled = false
-})
-
-local E = cb.TextField({
-	Text = "Kill Player",
-	Callback = function(Value)
-		local args = {
-    		[1] = game:GetService("Players")[Value].Character.Humanoid
-		}
-		
-		game:FindFirstChild("P", true).RemoteEvent:FireServer(unpack(args))
-	end,
-})
-
-
 
 -------------------------------------------------------
 
@@ -492,7 +439,19 @@ end end
                 firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
 end end
         for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "Text" then
+            if a.Name == "m" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "7up" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "RobloxMug" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "Radio" then
                 firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
 end end
 	end,
@@ -505,11 +464,98 @@ end end
 	}
 })
 
-local H = to.Toggle({
-	Text = "Auto Grab Guns",
+local r = to.Toggle({
+	Text = "Auto Grab Tools",
 	Callback = function(Value)
 	    _G.Destroys2 = (Value)
 	    while _G.Destroys2 do
+	    wait()
+	    for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "Light" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+		for i, a in pairs(game.Workspace:GetChildren()) do
+   			if a.Name == "BloxyCola" then
+				firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "Gatorade" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "RedBull" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "MountainDew" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "DietCoke" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "CreamSoda" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "Sevenup" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "Pepsi" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "Coke" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "DrPepper" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "Fanta" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "IceTea" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "Sprite" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "P" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "m" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "7up" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "RobloxMug" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "Radio" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+	    end
+	end,
+	Enabled = false
+})
+
+local H = to.Toggle({
+	Text = "Auto Grab Guns",
+	Callback = function(Value)
+	    _G.Destroys3 = (Value)
+	    while _G.Destroys3 do
 	    wait()
 	        for i, a in pairs(game.Workspace:GetChildren()) do
                 if a.Name == "P" then
@@ -532,8 +578,8 @@ local mi = X.New({
 local H = mi.Toggle({
 	Text = "Crazy Vending Machine",
 	Callback = function(Value)
-	    _G.Destroys3 = (Value)
-	    while _G.Destroys3 do
+	    _G.Destroys4 = (Value)
+	    while _G.Destroys4 do
 	    wait()
 	        for i, v in pairs(game.Workspace:GetChildren()) do
                 if v.Name == "Model" then
@@ -578,8 +624,8 @@ end
 local L = mi.Toggle({
 	Text = "Crazy Light (Beware of Lag)",
 	Callback = function(Value)
-	    _G.Destroys4 = (Value)
-	    while _G.Destroys4 do
+	    _G.Destroys5 = (Value)
+	    while _G.Destroys5 do
 	    wait()
 	    	for i, v in pairs(game.Workspace:GetChildren()) do
                 if v.Name == "Model" then

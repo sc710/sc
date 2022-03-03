@@ -221,7 +221,7 @@ local H = cb.Toggle({
 	    _G.Destroys1 = (Value)
 	    for i, v in pairs(game.Workspace:GetChildren()) do
 	        if v.Name == 'Part' then
-                if v.CFrame == CFrame.new(-65, 12.5, 275, -1, 0, 0, 0, 0, 1, 0, 1, -0) then
+                if v.CFrame == CFrame.new(-85, 12.5, 275, -1, 0, 0, 0, 0, 1, 0, 1, -0) then
                     while _G.Destroys1 do
                     wait()
                         firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v, 0)

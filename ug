@@ -587,7 +587,7 @@ local H = to.Toggle({
 	    while _G.Destroys3 do
 	    wait()
 	        for i, a in pairs(game.Workspace:GetChildren()) do
-                if a.Name == "P" then
+                if a.Name == "pistol" then
                     firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
                 end
             end

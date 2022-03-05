@@ -221,7 +221,7 @@ local H = cb.Toggle({
 	    _G.Destroys1 = (Value)
 	    for i, v in pairs(game.Workspace:GetChildren()) do
 	        if v.Name == 'Part' then
-                if v.CFrame == CFrame.new(-85, 12.5, 275, -1, 0, 0, 0, 0, 1, 0, 1, -0) then
+                if v.CFrame == CFrame.new(-75, 12.5, 275, -1, 0, 0, 0, 0, 1, 0, 1, -0) then
                     while _G.Destroys1 do
                     wait()
                         firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v, 0)
@@ -488,6 +488,10 @@ end end
                 firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
 end end
         for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "7up" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
             if a.Name == "pistol" then
                 firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
 end end
@@ -565,6 +569,10 @@ end end
 end end
         for i, a in pairs(game.Workspace:GetChildren()) do
             if a.Name == "Sprite" then
+                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
+end end
+        for i, a in pairs(game.Workspace:GetChildren()) do
+            if a.Name == "7up" then
                 firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
 end end
         for i, a in pairs(game.Workspace:GetChildren()) do

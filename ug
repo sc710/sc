@@ -621,38 +621,31 @@ local H = mi.Toggle({
 	        for i, v in pairs(game.Workspace:GetChildren()) do
                 if v.Name == "Model" then
             for a, b in pairs(v:GetChildren()) do
-                if b.Name == "Model" then
-            for c, d in pairs(b:GetChildren()) do
-                if d.Name == "gator" then
-	    	fireclickdetector(d.Parent.gator.ClickDetector)
+                if b.Name == "gator" then
+	    	fireclickdetector(b.Parent.gator.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(d.Parent.redb.ClickDetector)
+	    	fireclickdetector(b.Parent.redb.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(d.Parent.mtndew.ClickDetector)
+	    	fireclickdetector(b.Parent.mtndew.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(d.Parent.dietcoke.ClickDetector)
+	    	fireclickdetector(b.Parent.dietcoke.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(d.Parent.aw.ClickDetector)
+	    	fireclickdetector(b.Parent.aw.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(d.Parent["7up"].ClickDetector)
+	    	fireclickdetector(b.Parent["7up"].ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(d.Parent.pepsi.ClickDetector)
+	    	fireclickdetector(b.Parent.pepsi.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(d.Parent.coke.ClickDetector)
+	    	fireclickdetector(b.Parent.coke.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(d.Parent.drpep.ClickDetector)
+	    	fireclickdetector(b.Parent.drpep.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(d.Parent.fanta.ClickDetector)
+	    	fireclickdetector(b.Parent.fanta.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(d.Parent.lipton.ClickDetector)
+	    	fireclickdetector(b.Parent.lipton.ClickDetector)
 	    	-------------------------------------------------------
-	    	fireclickdetector(d.Parent.sprite.ClickDetector)
-                end
-            end
-                end
-end
-end
-end
+	    	fireclickdetector(b.Parent.sprite.ClickDetector)
+            end end end end
 	    end
 	end,
 	Enabled = false
@@ -724,5 +717,3 @@ local L = mi.Toggle({
 	end,
 	Enabled = false
 })
-
--------------------------------------------------------

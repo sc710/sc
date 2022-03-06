@@ -46,7 +46,7 @@ local sa = lp.Button({
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "Combat이제 잘 작동합니다. (3월 5일 업뎃도 문제없네요)"
+				Text = "Combat이제 잘 작동합니다."
 			})
 		end
 	}
@@ -59,7 +59,7 @@ local sa = lp.Button({
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "Combat 다시 돌아옴."
+				Text = "Teleport 위치 변경"
 			})
 		end
 	}
@@ -138,28 +138,28 @@ local tp = X.New({
 local F = tp.Button({
 	Text = "Spawn",
 	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-235, 12.9999971, 275, 1, 1.02731875e-07, 1.67304322e-07, -1.02731875e-07, 1, 3.72574114e-08, -1.67304322e-07, -3.72574256e-08, 1)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-235, 12.9999971, 285, 1, 2.31743389e-08, 3.7168629e-14, -2.31743389e-08, 1, 1.07444315e-07, -3.46786808e-14, -1.07444315e-07, 1)
 	end,
 })
 
 local G = tp.Button({
 	Text = "Gun Spawner",
 	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-44.9428596, 14.9999971, 274.891998, -0.00386628741, 1.96161487e-08, -0.999992549, -2.00165342e-08, 1, 1.96936867e-08, 0.999992549, 2.0092525e-08, -0.00386628741)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-75.093605, 14.9999971, 275.117615, 0.00561147789, 6.80334793e-08, -0.999984264, -9.84480479e-08, 1, 6.74821052e-08, 0.999984264, 9.80678223e-08, 0.00561147789)
 	end,
 })
 
 local G = tp.Button({
 	Text = "House",
 	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(42.3999405, 15.2000008, 181.09996, 0.00870427676, -1.17559562e-09, -0.999962091, 6.54378163e-10, 1, -1.16994403e-09, 0.999962091, -6.44169829e-10, 0.00870427676)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1.60000718, 15.2000008, 191.099945, 0.00978099927, 3.24999476e-08, -0.999952137, -4.08049168e-08, 1, 3.21023705e-08, 0.999952137, 4.0488974e-08, 0.00978099927)
 	end,
 })
 
 local G = tp.Button({
 	Text = "Secret Room",
 	Callback = function()
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(59.3999939, 27.5999947, 145.600037, -1.10631515e-13, -6.66754971e-08, 1, -2.84584747e-08, 1, 6.66754971e-08, -1, -2.84584747e-08, -1.12528998e-13)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(15.3999863, 27.5999947, 165.600021, -5.93706147e-07, 3.64786601e-08, 1, 5.83325788e-09, 1, -3.64786565e-08, -1, 5.83323612e-09, -5.93706147e-07)
 	end,
 })
 
@@ -216,7 +216,7 @@ local H = cb.Toggle({
 })
 
 local H = cb.Toggle({
-	Text = "Auto Get Gun (First)",
+	Text = "Auto Get Gun",
 	Callback = function(Value)
 	    _G.Destroys1 = (Value)
 	    for i, v in pairs(game.Workspace:GetChildren()) do
@@ -645,7 +645,10 @@ local H = mi.Toggle({
 	    	fireclickdetector(b.Parent.lipton.ClickDetector)
 	    	-------------------------------------------------------
 	    	fireclickdetector(b.Parent.sprite.ClickDetector)
-            end end end end
+                end
+            end
+                end
+            end
 	    end
 	end,
 	Enabled = false

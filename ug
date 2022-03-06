@@ -46,7 +46,7 @@ local sa = lp.Button({
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "Combat이제 잘 작동합니다."
+				Text = "Combat이제 잘 작동합니다. (3월 5일 업뎃도 문제없네요)"
 			})
 		end
 	}

@@ -216,7 +216,7 @@ local H = cb.Toggle({
 })
 
 local H = cb.Toggle({
-	Text = "Auto Get Gun",
+	Text = "Auto Get Gun (First)",
 	Callback = function(Value)
 	    _G.Destroys1 = (Value)
 	    for i, v in pairs(game.Workspace:GetChildren()) do

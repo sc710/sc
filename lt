@@ -1,0 +1,668 @@
+------------------------------------------------------- Local
+
+local LP = game:GetService('Players').LocalPlayer
+local functions={};
+local hu = game.Players.LocalPlayer.Character.Humanoid
+
+------------------------------------------------------- function
+
+local function SendNotification(Title,Text,Duration)
+    game.StarterGui:SetCore("SendNotification", {
+        Title = Title;
+        Text = Text;
+        Icon = nil;
+        Duration = Duration
+    })
+end
+
+functions.Teleport=function(cf)
+    repeat wait()until LP.Character:FindFirstChild('HumanoidRootPart');
+    if LP.Character.Humanoid.Sit then 
+        LP.Character.Humanoid.SeatPart.Parent:SetPrimaryPartCFrame(cf*CFrame.Angles(math.rad(LP.Character.Humanoid.SeatPart.Parent.PrimaryPart.Orientation.X), math.rad(LP.Character.Humanoid.SeatPart.Parent.PrimaryPart.Orientation.Y), math.rad(LP.Character.Humanoid.SeatPart.Parent.PrimaryPart.Orientation.Z)));
+    elseif not LP.Character.Humanoid.Sit then 
+        LP.Character:SetPrimaryPartCFrame(cf)
+    end;
+end;
+
+functions.getPlanks=function()
+    local plankList={};
+    for _,plank in next,game.Workspace.PlayerModels:GetChildren() do 
+        if  plank:FindFirstChild('WoodSection')and plank:FindFirstChild('Owner')and plank.Owner.Value==LP and not table.find(plankList,plank)then 
+            table.insert(plankList,plank)
+        end;
+    end;
+    return plankList;
+end;
+
+functions.getLogs=function()
+    local logList={};
+    for _,Log in next,game.Workspace.LogModels:GetChildren()do 
+        if Log:FindFirstChild("Owner")and Log.Owner.Value == LP and not table.find(logList,Log) then 
+            table.insert(logList,Log)
+        end;
+    end;
+    return logList;
+end;
+
+functions.tpPlanksToPlayer=function()
+    local logFolder=functions.getPlanks();
+    local oldPos=LP.Character.HumanoidRootPart.CFrame;
+    for _,Log in next,logFolder do 
+        if Log:FindFirstChild('WoodSection')then 
+            if (LP.Character.HumanoidRootPart.CFrame.p-Log.WoodSection.CFrame.p).magnitude>40 then
+                functions.Teleport(CFrame.new(Log.WoodSection.CFrame.p+Vector3.new(2,0,2)));
+            end;
+            spawn(function()
+                for i=1,20 do
+                    game:GetService('ReplicatedStorage').Interaction.ClientRequestOwnership:FireServer(Log);
+                    game:GetService('ReplicatedStorage').Interaction.ClientIsDragging:FireServer(Log);
+                    wait();
+                end;
+            end)
+            wait(0.18)
+            if not Log.PrimaryPart then
+                Log.PrimaryPart=Log.WoodSection;
+            end;
+            Log:SetPrimaryPartCFrame(CFrame.new(oldPos.p));
+        end;
+    end; 
+    functions.Teleport(oldPos);
+end;
+
+functions.tpLogsToPlayer=function()
+    local logFolder=functions.getLogs();
+    local oldPos=LP.Character.HumanoidRootPart.CFrame;
+    for _,Log in next,logFolder do 
+        if Log:FindFirstChild("WoodSection")then 
+            if (LP.Character.HumanoidRootPart.CFrame.p-Log.WoodSection.CFrame.p).magnitude > 40 then
+                functions.Teleport(CFrame.new(Log.WoodSection.CFrame.p+Vector3.new(2,0,2)));
+            end;
+            spawn(function()
+                for i=1,20 do
+                    game:GetService('ReplicatedStorage').Interaction.ClientRequestOwnership:FireServer(Log);
+                    game:GetService('ReplicatedStorage').Interaction.ClientIsDragging:FireServer(Log);
+                    wait();
+                end;
+            end)
+            wait(0.18)
+            if not Log.PrimaryPart then
+                Log.PrimaryPart=Log.WoodSection;
+            end;
+            Log:SetPrimaryPartCFrame(CFrame.new(oldPos.p));
+        end;
+    end; 
+    functions.Teleport(oldPos);
+end;
+
+------------------------------------------------------- Ui Lib
+
+local Material = loadstring(game:HttpGet("https://pastebin.com/raw/Uf3cpFfW"))()
+
+wait(8.5)
+
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+-------------------------------------------------------
+
+local X = Material.Load({
+	Title = "Nanachi Hub",
+	Style = 3,
+	SizeX = 470,
+	SizeY = 220,
+	Theme = "Mocha",
+	ColorOverrides = {
+		MainFrame = Color3.fromRGB(230,230,230)
+	}
+})
+
+-------------------------------------------------------
+
+local lp = X.New({
+	Title = "Credit"
+})
+
+-------------------------------------------------------
+
+local s = lp.Button({
+	Text = "Credit",
+	Callback = function()
+
+	end,
+		Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Script By Nanachi_rbx"
+			})
+		end
+	}
+})
+
+local sa = lp.Button({
+	Text = "Announcement",
+	Callback = function()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = ""
+			})
+		end
+	}
+})
+
+local sa = lp.Button({
+	Text = "Update",
+	Callback = function()
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = ""
+			})
+		end
+	}
+})
+
+-------------------------------------------------------
+
+local lp = X.New({
+	Title = "LocalPlayer"
+})
+
+-------------------------------------------------------
+
+local Fa = lp.Button({
+	Text = "Teleport your plot",
+	Callback = function()
+		for i, v in pairs(game.Workspace:GetChildren()) do
+		    if v.Name == "Properties" then
+        		for a, b in pairs(v:GetChildren()) do
+            		if b:FindFirstChild("Owner").Value == game.Players.LocalPlayer then
+            		    game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+                		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = b.OriginSquare.OriginCFrame.Value
+                		game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
+            		end
+        		end
+    		end
+		end
+	end,
+})
+
+local B = lp.Slider({
+	Text = "WalkSpeed",
+	Callback = function(ws)
+	    repeat
+	        wait()
+	    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = game:GetService("CoreGui"):FindFirstChild("Nanachi Hub").MainFrame.Content.LOCALPLAYER.Slider.wsv.Text
+	    until game.Players.LocalPlayer.Character.Humanoid.WalkSpeed == 17
+	end,
+	Min = 16,
+	Max = 500,
+	Def = 0
+})
+
+local C = lp.Slider({
+	Text = "JumpPower",
+	Callback = function(jp)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = jp * 1
+	end,
+	Min = 50,
+	Max = 500,
+	Def = 0
+})
+
+local H = lp.Toggle({
+	Text = "Fly",
+	Callback = function(Value)
+	    _G.Destroys6 = (Value)
+	    if _G.Destroys6 then
+	        Fly = true
+	        local mouse=game.Players.LocalPlayer:GetMouse''
+	        localplayer=game.Players.LocalPlayer
+	        game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
+	        local torso = game.Players.LocalPlayer.Character.HumanoidRootPart
+	        local speed=0
+	        local keys={a=false,d=false,w=false,s=false} 
+	        local e1
+	        local e2
+	        local function start()
+	            local pos = Instance.new("BodyPosition",torso)
+	            local gyro = Instance.new("BodyGyro",torso)
+ 	            pos.Name="EPIXPOS"
+	            pos.maxForce = Vector3.new(math.huge, math.huge, math.huge)
+ 	            pos.position = torso.Position
+	            gyro.maxTorque = Vector3.new(9e9, 9e9, 9e9) 
+	            gyro.cframe = torso.CFrame
+  	            repeat
+    	            wait()
+  	                localplayer.Character.Humanoid.PlatformStand=true
+    	            local new=gyro.cframe - gyro.cframe.p + pos.position
+    	            if not keys.w and not keys.s and not keys.a and not keys.d then
+         	            speed=1
+                    end 
+        	        if keys.w then 
+        	            new = new + workspace.CurrentCamera.CoordinateFrame.lookVector * speed
+        	            speed=speed+0.02
+        	        end
+        	        if keys.s then 
+            	        new = new - workspace.CurrentCamera.CoordinateFrame.lookVector * speed
+            	        speed=speed+0.02
+        	        end
+        	        if keys.d then 
+            	        new = new * CFrame.new(speed,0,0)
+            	        speed=speed+0.02
+        	        end
+        	        if keys.a then 
+            	        new = new * CFrame.new(-speed,0,0)
+            	        speed=speed+0.02
+        	        end
+        	        if speed>5 then
+            	        speed=5.5
+        	        end
+        	        pos.position=new.p
+        	        if keys.w then
+            	        gyro.cframe = workspace.CurrentCamera.CoordinateFrame*CFrame.Angles(-math.rad(speed*15),0,0)
+            	        elseif keys.s then
+             	        gyro.cframe = workspace.CurrentCamera.CoordinateFrame*CFrame.Angles(math.rad(speed*15),0,0)
+            	        else
+             	        gyro.cframe = workspace.CurrentCamera.CoordinateFrame
+            	    end
+            	    until not Fly
+            	        if gyro then gyro:Destroy() end
+                	        if pos then pos:Destroy() end
+                    	        flying=false
+                    	        localplayer.Character.Humanoid.PlatformStand=false
+                    	        speed=0
+                  	        end
+                  	        e1=mouse.KeyDown:connect(function(key)
+                   	        if not torso or not torso.Parent then flying=false e1:disconnect() e2:disconnect() return end
+                    	        if key=="w" then
+                    	            keys.w=true
+                    	            elseif key=="s" then
+                    	            keys.s=true
+                    	            elseif key=="a" then
+                    	            keys.a=true
+                    	            elseif key=="d" then
+                    	            keys.d=true
+                    	        end
+                    	    end)
+                      	    e2=mouse.KeyUp:connect(function(key)
+                    	        if key=="w" then
+                    	            keys.w=false
+                    	            elseif key=="s" then
+                    	            keys.s=false
+                    	            elseif key=="a" then
+                    	            keys.a=false
+                    	            elseif key=="d" then
+                    	            keys.d=false
+                       	        end
+	                        end)
+	                 start()
+	    else
+	        if _G.Destroys6 == false then
+	            Fly = false
+	        end
+	    end
+	end,
+	Enabled = false
+})
+
+local E = lp.TextField({
+	Text = "Teleport to Player",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[Value].Character.HumanoidRootPart.CFrame
+	end,
+})
+
+-------------------------------------------------------
+
+local tp = X.New({
+	Title = "TP"
+})
+
+-------------------------------------------------------
+
+local D = tp.Dropdown({
+	Text = "Wood Teleports ",
+	Callback = function(Value1)
+	Slotsa = (Value1)
+		if Slotsa == "Volcano" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1613.58582, 622.999878, 1071.19751, 0.866007268, 6.3426512e-08, 0.500031412, -4.12111127e-08, 1, -5.54712969e-08, -0.500031412, 2.74316942e-08, 0.866007268)
+		end
+		if Slotsa == "Snow Mountain" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1452.94678, 412.365753, 3267.75586, -1.27455596e-05, -8.70990569e-09, -1, -1.50321782e-08, 1, -8.70971473e-09, 1, 1.50320663e-08, -1.27455596e-05)
+		end
+		if Slotsa == "Swamp" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1212.53345, 141.935318, -686.948547, 0.93985945, 1.07339115e-09, -0.341561437, -9.79714443e-09, 1, -2.38157654e-08, 0.341561437, 2.57297987e-08, 0.93985945)
+		end
+		if Slotsa == "Maze Cave" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3511.60083, -196.099915, 449.799927, -2.32688299e-13, -5.37503242e-09, 1, -3.58854066e-08, 1, 5.37503242e-09, -1, -3.58854066e-08, -2.32881179e-13)
+		end
+		if Slotsa == "Sand Island" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1786.34131, -5.90000296, -2462.16675, 0.00186542643, -8.81705553e-09, -0.999998271, 3.72834101e-08, 1, -8.74752182e-09, 0.999998271, -3.72670286e-08, 0.00186542643)
+		end
+		if Slotsa == "Water Cave" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1046.63159, -5.89978361, -944.206848, 0.00186312164, -1.07469962e-08, -0.999998271, 7.17930746e-08, 1, -1.06132561e-08, 0.999998271, -7.17731794e-08, 0.00186312164)
+		end
+		if Slotsa == "End Time" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-36.5128975, -212.900177, -1349.29944, 0.222916305, 0, 0.974837601, 0, 1, 0, -0.974837601, 0, 0.222916305)
+	    end
+	end,
+	Options = {
+		"Volcano",
+		"Snow Mountain",
+		"Swamp",
+		"Maze Cave",
+		"Sand Island",
+		"Water Cave",
+		"End Time",
+		
+	},
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "여러 나무들이 있는 장소(?)로 이동합니다."
+			})
+		end
+	}
+})
+
+local D = tp.Dropdown({
+	Text = "Shop Teleports ",
+	Callback = function(Value1)
+	Slotsa = (Value1)
+		if Slotsa == "WoodRUs" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(263.77771, 3.19999933, 59.6404953, -0.999920547, -8.40000514e-10, 0.0126049239, -9.30873933e-10, 1, -7.2034898e-09, -0.0126049239, -7.2146511e-09, -0.999920547)
+		end
+		if Slotsa == "LandStore" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(283.599915, 3.20009923, -99.0998535, 0.0125712492, 5.00675057e-09, -0.999920964, 5.04894737e-10, 1, 5.01349406e-09, 0.999920964, -5.67880687e-10, 0.0125712492)
+		end
+		if Slotsa == "FurnitureStore" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(489.646484, 3.20000672, -1720.29492, -0.999979973, -4.53413485e-09, -0.00632901164, -4.44173365e-09, 1, -1.46136587e-08, 0.00632901164, -1.45852539e-08, -0.999979973)
+		end
+		if Slotsa == "CarStore" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(518.609619, 3.200001, -1461.59656, 0.999827385, -1.46451802e-08, -0.0185805168, 1.46982462e-08, 1, 2.71945577e-09, 0.0185805168, -2.99208724e-09, 0.999827385)
+	    end
+		if Slotsa == "ShackShop" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(261.14151, 8.40083504, -2541.28149, -0.258864403, -4.0629704e-09, 0.965913653, 1.14065681e-08, 1, 7.26330418e-09, -0.965913653, 1.28979716e-08, -0.258864403)
+		end
+		if Slotsa == "LogicStore" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(4604.71777, 7.00083923, -783.731934, -0.999957085, -4.11352952e-09, 0.00926153269, -4.0202992e-09, 1, 1.00849942e-08, -0.00926153269, 1.00473283e-08, -0.999957085)
+		end
+		if Slotsa == "FineArt" then
+		    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5233.31445, -166.000031, 729.791077, -0.999967158, -1.75640857e-09, 0.00810716208, -2.21064189e-09, 1, -5.60196938e-08, -0.00810716208, -5.60357769e-08, -0.999967158)
+		end
+	end,
+	Options = {
+		"WoodRUs",
+		"LandStore",
+		"FurnitureStore",
+		"CarStore",
+		"ShackShop",
+		"LogicStore",
+		"FineArt",
+		
+	},
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "여러 상점으로 이동합니다."
+			})
+		end
+	}
+})
+
+-------------------------------------------------------
+
+local wd = X.New({
+	Title = "Wood"
+})
+
+-------------------------------------------------------
+
+local f = wd.Button({
+	Text = "TP Logs To Player",
+	Callback = function()
+	    functions.tpLogsToPlayer();
+	end,
+})
+
+local s = wd.Button({
+	Text = "Sell Logs",
+	Callback = function()
+        local oldPos=LP.Character.HumanoidRootPart.CFrame.p
+        functions.Teleport(CFrame.new(315.4, 3, 85.4))
+        wait(.1)
+        functions.tpLogsToPlayer();
+        functions.Teleport(CFrame.new(oldPos))
+	end,
+})
+
+local c = wd.Button({
+	Text = "TP Planks To Player",
+	Callback = function()
+	    functions.tpPlanksToPlayer();
+	end,
+})
+
+local n = wd.Button({
+	Text = "Sell Planks",
+	Callback = function()
+    	local oldPos=LP.Character.HumanoidRootPart.CFrame.p
+        functions.Teleport(CFrame.new(315.4, 3, 85.4))
+        wait(.1)
+        functions.tpPlanksToPlayer();
+        functions.Teleport(CFrame.new(oldPos))
+	end,
+})
+
+-------------------------------------------------------
+
+local du = X.New({
+	Title = "Dupe"
+})
+
+-------------------------------------------------------
+local MoneyCooldown = false
+local CurrentSlot = game.Players.LocalPlayer:WaitForChild("CurrentSaveSlot").Value
+local ScriptLoadOrSave = false
+local CurrentlySavingOrLoading = game.Players.LocalPlayer:WaitForChild("CurrentlySavingOrLoading")
+
+local function CheckIfSlotAvailable(Slot)
+    for a,b in pairs(game.ReplicatedStorage.LoadSaveRequests.GetMetaData:InvokeServer(game.Players.LocalPlayer)) do
+        if a == Slot then
+            for c,d in pairs(b) do
+                if c == "NumSaves" and d ~= 0 then
+                    return true
+                else
+                    return false
+                end
+            end
+        end
+    end
+end
+
+local D = du.Dropdown({
+	Text = "Slot Number ",
+	Callback = function(Value1)
+	Slots = (Value1)
+		
+	end,
+	Options = {
+		1,
+		2,
+		3,
+		4,
+		5,
+		6
+	},
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "슬롯 넘버를 지정하세요!"
+			})
+		end
+	}
+})
+
+local function CheckSlotNumber()
+    if Slots == 1 or Slots == 2 or Slots == 3 or Slots == 4 or Slots == 5 or Slots == 6 then
+        local SlotNumber = tonumber(Slots)
+        return SlotNumber
+        else return false
+    end
+end
+
+local A = du.Button({
+	Text = "Save Slot",
+	Callback = function()
+    local CheckSlot = CheckSlotNumber()
+    if CheckSlot ~= false then
+        if CurrentSlot ~= -1 then
+            ScriptLoadOrSave = true
+            local SaveSlot = game.ReplicatedStorage.LoadSaveRequests.RequestSave:InvokeServer(CheckSlot)
+            if SaveSlot == true then
+                SendNotification("저장 완료", "슬롯을 저장했습니다.", 2)
+                wait(.5)
+                ScriptLoadOrSave = false
+            elseif SaveSlot == false then
+                SendNotification("저장중", "저장 불러오기가 진행중입니다.", 1)
+                wait(.5)
+                ScriptLoadOrSave = false
+            end
+        else
+            SendNotification("오류", "저장하기 전 슬롯을 로드하세요.", 1)
+        end
+    else
+        SendNotification("잘못된 슬롯", "슬롯 넘버를 지정해주세요.", 1)
+    end
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "슬롯을 저장합니다."
+			})
+		end
+	}
+})
+
+local A = du.Button({
+	Text = "Load Slot",
+	Callback = function()
+    ScriptLoadOrSave = true
+    local CheckSlot = CheckSlotNumber()
+    if CheckSlot ~= false then
+        if CheckIfSlotAvailable(CheckSlot) == true then
+            local LoadSlot = game.ReplicatedStorage.LoadSaveRequests.RequestLoad:InvokeServer(CheckSlot)
+            if LoadSlot == false then
+                SendNotification("잠깐", "기다려주세요.", 1)
+            end
+            if LoadSlot == true then
+                SendNotification("로드 완료", "슬롯을 로드했습니다.", 2)
+                CurrentSlot = CheckSlot
+            end
+        else
+            SendNotification("오류", "이 슬롯은 사용할 수 없습니다.", 2)
+        end
+    else
+        SendNotification("잘못된 슬롯", "슬롯 넘버를 지정해주세요.", 1)
+    end
+    ScriptLoadOrSave = false
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "슬롯을 불러옵니다."
+			})
+		end
+	}
+})
+
+local A = du.Button({
+	Text = "Dupe Money",
+	Callback = function()
+    if MoneyCooldown == true then
+        SendNotification("잠깐", "기다려주세요.",2)
+        return
+    elseif MoneyCooldown == false then
+        MoneyCooldown = true
+        SendNotification("돈 지급까지", "Reload 후 2분 정도 기다려주세요", 5)
+        game.ReplicatedStorage.Transactions.ClientToServer.Donate:InvokeServer(game.Players.LocalPlayer, game.Players.LocalPlayer.leaderstats.Money.Value, 1)
+        SendNotification("성공", "Dupe 성공! 이제 Save Slot을 해주세요.", 5)
+        MoneyCooldown = false
+		end
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "돈을 복사하는 역할을 합니다. (사용법 : SaveSlot -> Dupe Money -> SaveSlot)"
+			})
+		end
+	}
+})
+
+local G = du.Button({
+	Text = "Dupe Inventory",
+	Callback = function()
+	    local ws = game.Workspace
+		local wp = game.Players.LocalPlayer.Character
+		local bs = game:GetService("Players").LocalPlayer.Backpack
+		---
+		if wp:FindFirstChildOfClass("Tool", true) then
+		wp:FindFirstChildOfClass("Tool", true).Parent = bs
+		end
+		---
+		Amount = 0
+        for a,b in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+            if b.Name == "Tool" then
+                game.ReplicatedStorage.Interaction.ClientInteracted:FireServer(b, "Drop tool", game.Players.LocalPlayer.Character.Head.CFrame)
+                Amount = Amount + 1
+            end
+        end
+        SendNotification("인벤 Dupe", Amount.."개 도끼가 복사되었습니다.",5)
+        ---
+		if wp:FindFirstChildOfClass("Tool", true) then
+		wp:FindFirstChildOfClass("Tool", true).Parent = bs
+		end
+		---
+        for a,b in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+            if b.Name == "Tool" then
+                game.Players.LocalPlayer.Character.Torso:Destroy()
+                game.Players.LocalPlayer.Character["Left Arm"]:Destroy()
+                game.Players.LocalPlayer.Character["Right Arm"]:Destroy()
+                game.Players.LocalPlayer.Character["Left Leg"]:Destroy()
+                game.Players.LocalPlayer.Character["Right Leg"]:Destroy()
+                game.Players.LocalPlayer.Character.HumanoidRootPart:Destroy()
+                game.Players.LocalPlayer.Character.Head:Destroy()
+            end
+        end
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "인벤토리에 있는 아티템을(도끼) 복사합니다. (사용법 : Dupe Inventory 클릭)"
+			})
+		end
+	}
+})
+
+-------------------------------------------------------
+
+for i, v in pairs (game.CoreGui["Nanachi Hub"].MainFrame.Content.LOCALPLAYER:FindFirstChild("Slider"):GetChildren()) do
+    if v.Name == "TextLabel" then
+        if v.Text == "16" then
+            v.Name = "wsv"
+        end
+    end
+end
+
+while wait(.15) do
+    if CurrentlySavingOrLoading.Value == true and ScriptLoadOrSave == false then
+        repeat
+        wait(1)
+        until CurrentlySavingOrLoading.Value == false
+        wait(1)
+        CurrentSlot = game.Players.LocalPlayer.CurrentSaveSlot.Value
+        print(CurrentSlot)
+    end
+end

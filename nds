@@ -123,18 +123,6 @@ local D = lp.Toggle({
 	Enabled = false
 })
 
-local D = lp.Toggle({
-	Text = "Remove SendStorm Dust",
-	Callback = function(Value)
-	    _G.Destroys1 = (Value)
-	    while _G.Destroys1 do
-	    wait()
-            game.Workspace.Structure:WaitForChild("Dust"):Destroy()
-	    end
-	end,
-	Enabled = false
-})
-
 local E = lp.TextField({
 	Text = "Teleport to Player",
 	Callback = function(Value)

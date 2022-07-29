@@ -7,7 +7,7 @@ local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinl
 -------------------------------------------------------
 
 local X = Material.Load({
-	Title = "Nanachi Hub",
+	Title = "Nanachi Hub | I'm alive!",
 	Style = 3,
 	SizeX = 470,
 	SizeY = 230,
@@ -46,7 +46,7 @@ local sa = lp.Button({
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "Combat이제 잘 작동합니다."
+				Text = "오랜만!"
 			})
 		end
 	}
@@ -59,7 +59,7 @@ local sa = lp.Button({
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "Teleport 위치 변경"
+				Text = "아 구ㅣ찮아"
 			})
 		end
 	}

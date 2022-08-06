@@ -1,19 +1,15 @@
-local Material = loadstring(game:HttpGet("https://pastebin.com/raw/Uf3cpFfW"))()
-
-wait(8.5)
-
-local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/sc710/sc/main/Lib"))()
 
 -------------------------------------------------------
 
 local X = Material.Load({
-	Title = "Nanachi Hub | I'm alive!",
+	Title = "Nitro Hub",
 	Style = 3,
 	SizeX = 470,
 	SizeY = 230,
-	Theme = "Mocha",
+	Theme = "Discord",
 	ColorOverrides = {
-		MainFrame = Color3.fromRGB(230,230,230)
+		MainFrame = Color3.fromRGB(32,34,37)
 	}
 })
 
@@ -28,7 +24,7 @@ local lp = X.New({
 local s = lp.Button({
 	Text = "Credit",
 	Callback = function()
-
+	    print("Script By Nanachi_rbx")
 	end,
 		Menu = {
 		Information = function(self)
@@ -42,11 +38,12 @@ local s = lp.Button({
 local sa = lp.Button({
 	Text = "Announcement",
 	Callback = function()
+	    print("직접 새로운 테마를 만들어봤습니다.")
 	end,
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "오랜만!"
+				Text = "직접 새로운 테마를 만들어봤습니다."
 			})
 		end
 	}
@@ -55,11 +52,26 @@ local sa = lp.Button({
 local sa = lp.Button({
 	Text = "Update",
 	Callback = function()
+	    print("Remove Mash가 업데이트되었습니다.")
 	end,
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "아 구ㅣ찮아"
+				Text = "Remove Mash가 업데이트되었습니다."
+			})
+		end
+	}
+})
+
+local sa = lp.Button({
+	Text = "Bug",
+	Callback = function()
+	    print("Kill Player가 작동이 되지 않던 버그를 수정했습니다.")
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "Kill Player가 작동이 되지 않던 버그를 수정했습니다."
 			})
 		end
 	}
@@ -240,7 +252,7 @@ local E = cb.TextField({
     		[1] = game:GetService("Players")[Value].Character.Humanoid
 		}
 		
-		game:FindFirstChild("P", true).RemoteEvent:FireServer(unpack(args))
+		game:FindFirstChild("pistol", true).RemoteEvent:FireServer(unpack(args))
 	end,
 })
 
@@ -253,6 +265,155 @@ local to = X.New({
 })
 
 -------------------------------------------------------
+
+local A = to.Button({
+	Text = "Remove Mash",
+	Callback = function()
+	    local ws = game.Workspace
+	    local wp = game.Players.LocalPlayer.Character
+	    local bs = game:GetService("Players").LocalPlayer.Backpack
+		
+	    while wait() do
+   	        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+   	        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+        end
+        if bs:FindFirstChildOfClass("Tool", true).Handle:FindFirstChild("Mesh") then
+	    	    bs:FindFirstChildOfClass("Tool", true).Handle.Mesh:Destroy()
+	    	    else
+	    	        bs:FindFirstChildOfClass("Tool").Parent = wp
+	        end
+		end
+	end,
+	Menu = {
+		Information = function(self)
+			X.Banner({
+				Text = "모든 툴의 Mash를 지웁니다."
+			})
+		end
+	}
+})
 
 local A = to.Button({
 	Text = "Drop Tools",

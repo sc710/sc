@@ -66,12 +66,12 @@ local sa = lp.Button({
 local sa = lp.Button({
 	Text = "Bug",
 	Callback = function()
-	    print("Kill Player가 작동이 되지 않던 버그를 수정했습니다.")
+	    print("Grab Tools 버그를 수정했습니다.")
 	end,
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "Kill Player가 작동이 되지 않던 버그를 수정했습니다."
+				Text = "Grab Tools 버그를 수정했습니다."
 			})
 		end
 	}
@@ -472,74 +472,13 @@ local A = to.Button({
 local g = to.Button({
 	Text = "Grab Tools",
 	Callback = function()
-		for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "Light" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-		for i, a in pairs(game.Workspace:GetChildren()) do
-   			if a.Name == "BloxyCola" then
-				firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "Gatorade" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "RedBull" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "MountainDew" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "DietCoke" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "CreamSoda" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "Sevenup" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "Pepsi" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "Coke" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "DrPepper" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "Fanta" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "IceTea" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "Sprite" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "7up" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "pistol" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-       for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "message" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
+		for i, v in pairs(game.Workspace:GetChildren()) do
+	        if v.Name == "RedBull" or v.Name == "MountainDew" or v.Name == "Sprite" or v.Name == "DrPepper" or v.Name == "BloxyCola" or v.Name == "Gatorade" or v.Name == "DietCoke" or v.Name == "CreamSoda" or v.Name == "Sevenup" or v.Name == "Coke" or v.Name == "Fanta" or v.Name == "IceTea" or v.Name == "7up" or v.Name == "Pepsi"then
+                if v:FindFirstChild("Handle", true) then
+                    firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v:FindFirstChild("Handle", true), 0)
+	            end
+	        end
+	    end
 	end,
 	Menu = {
 		Information = function(self)
@@ -556,74 +495,13 @@ local H = to.Toggle({
 	    _G.Destroys2 = (Value)
 	    while _G.Destroys2 do
 	    wait()
-	        		for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "Light" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-		for i, a in pairs(game.Workspace:GetChildren()) do
-   			if a.Name == "BloxyCola" then
-				firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "Gatorade" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "RedBull" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "MountainDew" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "DietCoke" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "CreamSoda" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "Sevenup" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "Pepsi" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "Coke" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "DrPepper" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "Fanta" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "IceTea" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "Sprite" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "7up" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-        for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "pistol" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
-       for i, a in pairs(game.Workspace:GetChildren()) do
-            if a.Name == "message" then
-                firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, a:FindFirstChild("Handle", true), 0)
-end end
+			for i, v in pairs(game.Workspace:GetChildren()) do
+	            if v.Name == "RedBull" or v.Name == "MountainDew" or v.Name == "Sprite" or v.Name == "DrPepper" or v.Name == "BloxyCola" or v.Name == "Gatorade" or v.Name == "DietCoke" or v.Name == "CreamSoda" or v.Name == "Sevenup" or v.Name == "Coke" or v.Name == "Fanta" or v.Name == "IceTea" or v.Name == "7up" or v.Name == "Pepsi"then
+                    if v:FindFirstChild("Handle", true) then
+                        firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v:FindFirstChild("Handle", true), 0)
+	                end
+	            end
+	        end
 	    end
 	end,
 	Enabled = false

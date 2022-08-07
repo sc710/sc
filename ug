@@ -3,7 +3,7 @@ local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/sc71
 -------------------------------------------------------
 
 local X = Material.Load({
-	Title = "Nitro Hub",
+	Title = "Nitro Hub | UntelGame",
 	Style = 3,
 	SizeX = 470,
 	SizeY = 230,

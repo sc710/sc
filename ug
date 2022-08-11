@@ -66,12 +66,12 @@ local sa = lp.Button({
 local sa = lp.Button({
 	Text = "Bug",
 	Callback = function()
-	    print("Grab Tools 버그를 수정했습니다.")
+	    print("Tool 스크립트, 총이 안 먹어지는 버그를 수정했습니다.")
 	end,
 	Menu = {
 		Information = function(self)
 			X.Banner({
-				Text = "Grab Tools 버그를 수정했습니다."
+				Text = "Tool 스크립트, 총이 안 먹어지는 버그를 수정했습니다."
 			})
 		end
 	}
@@ -302,162 +302,13 @@ local A = to.Button({
 		local wp = game.Players.LocalPlayer.Character
 		local bs = game:GetService("Players").LocalPlayer.Backpack
 		
-		while wait() do
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    bs:FindFirstChildOfClass("Tool", true).Parent = wp
-		    wp:FindFirstChildOfClass("Tool").Parent = ws
-		    if bs == nil then
-		        break
-		    end
+	    for a, b in pairs(bs:GetChildren()) do
+		    b.Parent = wp
+   	    	for i, v in pairs(wp:GetChildren()) do
+	    		if v.Name == "RedBull" or v.Name == "MountainDew" or v.Name == "Sprite" or v.Name == "DrPepper" or v.Name == "BloxyCola" or v.Name == "Gatorade" or v.Name == "DietCoke" or v.Name == "CreamSoda" or v.Name == "Sevenup" or v.Name == "Coke" or v.Name == "Fanta" or v.Name == "IceTea" or v.Name == "7up" or v.Name == "Pepsi" or "pistol" or "BoloxMug" then
+                	v.Parent = ws
+	    	    end
+	    	end
 		end
 	end,
 	Menu = {
@@ -473,7 +324,7 @@ local g = to.Button({
 	Text = "Grab Tools",
 	Callback = function()
 		for i, v in pairs(game.Workspace:GetChildren()) do
-	        if v.Name == "RedBull" or v.Name == "MountainDew" or v.Name == "Sprite" or v.Name == "DrPepper" or v.Name == "BloxyCola" or v.Name == "Gatorade" or v.Name == "DietCoke" or v.Name == "CreamSoda" or v.Name == "Sevenup" or v.Name == "Coke" or v.Name == "Fanta" or v.Name == "IceTea" or v.Name == "7up" or v.Name == "Pepsi"then
+	        if v.Name == "RedBull" or v.Name == "MountainDew" or v.Name == "Sprite" or v.Name == "DrPepper" or v.Name == "BloxyCola" or v.Name == "Gatorade" or v.Name == "DietCoke" or v.Name == "CreamSoda" or v.Name == "Sevenup" or v.Name == "Coke" or v.Name == "Fanta" or v.Name == "IceTea" or v.Name == "7up" or v.Name == "Pepsi" or "pistol" or "BoloxMug" then
                 if v:FindFirstChild("Handle", true) then
                     firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v:FindFirstChild("Handle", true), 0)
 	            end
@@ -496,7 +347,7 @@ local H = to.Toggle({
 	    while _G.Destroys2 do
 	    wait()
 			for i, v in pairs(game.Workspace:GetChildren()) do
-	            if v.Name == "RedBull" or v.Name == "MountainDew" or v.Name == "Sprite" or v.Name == "DrPepper" or v.Name == "BloxyCola" or v.Name == "Gatorade" or v.Name == "DietCoke" or v.Name == "CreamSoda" or v.Name == "Sevenup" or v.Name == "Coke" or v.Name == "Fanta" or v.Name == "IceTea" or v.Name == "7up" or v.Name == "Pepsi"then
+	            if v.Name == "RedBull" or v.Name == "MountainDew" or v.Name == "Sprite" or v.Name == "DrPepper" or v.Name == "BloxyCola" or v.Name == "Gatorade" or v.Name == "DietCoke" or v.Name == "CreamSoda" or v.Name == "Sevenup" or v.Name == "Coke" or v.Name == "Fanta" or v.Name == "IceTea" or v.Name == "7up" or v.Name == "Pepsi" or "pistol" or "BoloxMug" then
                     if v:FindFirstChild("Handle", true) then
                         firetouchinterest(game.Players.LocalPlayer.Character.HumanoidRootPart, v:FindFirstChild("Handle", true), 0)
 	                end
